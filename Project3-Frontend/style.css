@@ -1,0 +1,1171 @@
+/* Estilo geral com melhorias */
+/* Estilo geral com melhorias */
+
+body,
+html {
+   font-family: "Helvetica Neue", Arial, sans-serif;
+   color: var(--text-color);
+   background-color: var(--background-color);
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   height: 100%; /* Define a altura para 100% */
+}
+body.theme-light {
+   --primary-color: #e6e1dd;
+   --secondary-color: rgb(255, 255, 255, 0.111);
+   --tertiary-color: rgb(255, 255, 255, 0.111);
+   --quaternary-color: #f4976c;
+   --quinary-color: rgb(255, 255, 255, 1);
+   --todo-color: rgb(112, 170, 228);
+   --doing-color: #f4976c;
+   --done-color: rgb(188, 238, 172);
+   --header-color: rgba(5, 16, 46, 0.9);
+   --background-color: #dcc6bc;
+   --form-background: #dcc6bc;
+   --text-color: rgb(0, 0, 0, 1);
+   --text-color2: rgb(255, 255, 255, 1);
+   --no_functionColor: rgba(87, 87, 87, 0.33);
+   --deleted_banner: rgb(177, 0, 0, 0.9);
+   --menu-color: #dcc6bc;
+   --menu-hover: #8b8b8b;
+}
+body.theme-dark {
+   --primary-color: rgb(148, 146, 146);
+   --secondary-color: rgba(255, 255, 255, 0.07);
+   --tertiary-color: rgba(255, 255, 255, 0.07);
+   --quaternary-color: rgba(0, 5, 5, 0.3);
+   --quinary-color: rgba(255, 255, 255, 0.07);
+   --todo-color: rgba(96, 59, 44, 1);
+   --doing-color: rgba(40, 69, 108, 1);
+   --done-color: rgba(43, 89, 63, 1);
+   --header-color: rgba(77, 78, 81, 0.9);
+   --background-color: rgb(0, 0, 0);
+   --form-background: rgb(118, 115, 115);
+   --text-color: rgb(246, 242, 242);
+   --text-color2: rgb(255, 252, 252);
+   --no_functionColor: rgba(87, 87, 87, 0.33);
+   --deleted_banner: rgb(177, 0, 0, 0.9);
+   --menu-color: rgb(29, 29, 29);
+   --menu-hover: rgb(41, 41, 41);
+}
+
+header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   color: var(--text-color2);
+   text-align: center;
+   width: 100%;
+   height: 40px;
+   padding: 0px 0;
+   background-color: var(--header-color); /* Adicionando um fundo translúcido */
+   position: relative;
+   top: 0;
+   z-index: 2;
+}
+header #right-aligned {
+   display: flex;
+   justify-content: flex-end;
+   flex-grow: 1;
+   margin-left: auto;
+}
+
+header h1 {
+   margin: 0px;
+   padding: 0px 0;
+   align-content: center;
+}
+#logo {
+   max-width: 88px; /* Ajuste o tamanho da imagem conforme necessário */
+   height: auto; /* Mantém a proporção da imagem */
+   display: flex; /* Isso pode ajudar a garantir que o estilo seja aplicado */
+   margin-right: 20px; /* Centraliza a imagem no banner */
+   margin-left: 20px;
+   cursor: pointer;
+}
+.top-right-flags li {
+   display: inline;
+   margin-right: 10px;
+}
+
+.top-right-flags a {
+   color: #fff;
+   text-decoration: none;
+}
+.top-right-flags a:hover {
+   color: #bcc6db;
+   cursor: pointer;
+   text-decoration: none;
+}
+
+.top-right-flags a.active {
+   text-decoration: underline;
+   font-weight: bold;
+}
+
+.no_function {
+   visibility: hidden;
+}
+.menu-item {
+   margin-bottom: 7px;
+   padding: 1.5px;
+}
+.menu-item:hover {
+   background-color: var(--menu-hover);
+}
+
+.other-functions-byUser {
+   position: relative;
+   top: 50%;
+   transform: translate(0, -50%);
+   justify-content: center;
+}
+.other-options-user {
+   justify-content: center;
+}
+
+#delete-permanently {
+   background-color: var(--header-color);
+   color: white; /* Muda a cor do texto para garantir visibilidade */
+   background-size: cover; /* Garante que a imagem cubra todo o botão */
+}
+
+#delete-task-by-user {
+   background-color: var(--header-color);
+   color: white;
+   background-size: cover;
+}
+
+#add-user {
+   background-color: var(--header-color);
+   color: white;
+   background-size: cover;
+}
+
+#add-user a {
+   color: white; /* Muda a cor do texto do link para garantir visibilidade */
+   text-decoration: none; /* Remove o sublinhado do link */
+}
+
+#edit-submit {
+   margin-top: 10px;
+}
+
+#nav-exit {
+   cursor: pointer;
+}
+
+#usernameDisplay {
+   padding: 0px 15px;
+   font-size: 20px;
+   align-content: center;
+   justify-content: center;
+   text-decoration: none;
+}
+a h4 span#usernameDisplay {
+   padding: 0px 15px;
+   font-size: 20px;
+   align-content: center;
+   justify-content: center;
+   /* Não é necessário definir text-decoration aqui, pois é para o span */
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+   text-decoration: none; /* Remove a decoração do texto para todos os estados do link */
+   color: inherit; /* Faz o link herdar a cor do texto do elemento pai, opcional */
+}
+
+#userPhotolink {
+   margin: 0px 15px;
+}
+
+/*Barra de navegação*/
+.topnav {
+   display: flex; /* Alinha os itens da barra de navegação horizontalmente */
+   justify-content: center; /* Centraliza os itens da barra de navegação */
+   padding: 0.5em 0; /* Espaçamento vertical da barra de navegação */
+}
+
+.topnav a {
+   color: var(--text-color2); /* Cor do texto dos links */
+   padding: 5px 5px; /* Espaçamento interno dos links */
+   text-decoration: none; /* Remove o sublinhado */
+   font-size: 16px; /* Tamanho da fonte */
+   transition: background-color 0.1s; /* Transição suave para o hover */
+   border-radius: 5px; /* Bordas arredondadas para um visual moderno */
+   margin: 0 5px; /* Espaçamento entre os links */
+}
+
+.topnav a:hover {
+   background-color: #9f9e9e; /* Cor de fundo ao passar o mouse */
+}
+
+.topnav a.active {
+   background-color: #a6a7a2; /* Cor de fundo para o link ativo */
+}
+
+/******************************************
+FLAGS
+******************************************/
+.top-right-flags li {
+   display: inline;
+   margin-right: 10px;
+}
+
+.top-right-flags a {
+   color: #fff;
+   text-decoration: none;
+}
+.top-right-flags a:hover {
+   color: #bcc6db;
+   cursor: pointer;
+   text-decoration: none;
+}
+
+.top-right-flags a.active {
+   text-decoration: underline;
+   font-weight: bold;
+}
+
+main {
+   display: flex;
+   flex-direction: column;
+   height: calc(100% - 90px); /* Ajuste para ocupar a altura */
+   width: 99%;
+   align-self: center;
+   margin: 5px 0px;
+}
+
+.mainBoard-tasks-container,
+.mainBoard-Project-settings {
+   display: flex;
+   padding: 0; /* Espaço para cabeçalho e barra de navegação */
+   gap: 15px; /* Espaço entre as colunas */
+   max-height: 100%;
+   width: 100%;
+   flex-grow: 1;
+}
+.right-container {
+   display: flex;
+   flex-direction: column;
+   flex-grow: 3; /* Faz ocupar o espaço restante */
+   max-height: 100%;
+   width: 30%;
+}
+.tasks-row {
+   display: flex;
+   gap: 10px; /* Espaço entre as colunas */
+   height: 89%;
+}
+.horizontal-section {
+   display: flex;
+   flex-direction: row;
+   justify-content:space-around; /* Centraliza o conteúdo horizontalmente */
+   align-items: center; /* Centraliza o conteúdo verticalmente */
+   gap: 5px; /* Espaço entre as colunas */
+   flex-grow: 1; /* Faz a div ocupar o espaço restante na linha */
+   height: 10%; /* Altura da seção */
+   background-color: var(--secondary-color); /* Cor de fundo */
+   margin-bottom: 5px; /* Espaço abaixo da seção horizontal */
+   border-radius: 5px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+}
+#project-overview {
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+   margin-left: 9px;
+}
+#left-div-horizontal-sec {
+   display: flex;
+   align-items: center;
+   gap: 20px;
+   flex-grow: 1;
+}
+.filter-dection{
+   flex-grow: 1;
+   margin-right: 10px;
+}
+.col-leftMenu {
+   background-color: var(--menu-color);
+   border-radius: 8px;
+   padding: 0px;
+   margin-bottom: 0px; /* Espaçamento na parte inferior */
+   text-align: center;
+   width: 20%;
+   display: flex;
+   flex-direction: column;
+   box-shadow: 0px 0px 3px 1px rgb(0, 0, 0, 0.3);
+   height: 100%;
+}
+
+#create-project {
+   margin-top: 60px;
+}
+.user-list,
+.categories-list {
+   background-color: var(--secondary-color);
+   border-radius: 8px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   flex-grow: 1;
+   padding: 0px;
+   margin-bottom: 0px; /* Espaçamento na parte inferior */
+   text-align: center;
+   width: 78vw;
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   margin-left: 10px;
+}
+
+.col-leftMenu a.active {
+   text-decoration: underline;
+   font-weight: bold;
+}
+
+h4 {
+   margin: 0;
+   padding: 0px;
+}
+.col-todo,
+.col-doing,
+.col-done,
+.historic-retrospectives,
+.col-user-list {
+   background-color: var(--tertiary-color);
+   border-radius: 8px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   flex: 1;
+   padding: 0px;
+   margin-bottom: 20px; /* Espaçamento na parte inferior */
+   text-align: center;
+   width: 23vw;
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+}
+.header-list {
+   display: flex;
+   align-items: center;
+   justify-items: center;
+}
+.header-list h4 {
+   padding: 18px 0px;
+}
+
+#col-todo-text,
+#col-doing-text,
+#col-done-text,
+.col-user-list {
+   flex-grow: 1;
+   justify-self: center;
+}
+.count-div-circle {
+   background-color: var(--primary-color);
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+   height: 30px;
+   width: 40px;
+   border-radius: 20px;
+   margin-right: 7px;
+   align-items: center;
+}
+.invisible-counter {
+   visibility: hidden; /* Torna o elemento invisível */
+   width: 40px; /* Mesmo largura da .count-div-circle */
+   height: 30px; /* Mesma altura da .count-div-circle */
+   margin-right: 7px; /* Mesma margem da .count-div-circle */
+}
+
+.count-div-circle h3 {
+   margin: 0px;
+   padding: 3px;
+}
+
+#TODO_COLUMN,
+#DOING_COLUMN,
+#DONE_COLUMN,
+#User_COLUMN {
+   min-height: calc(100% - 45px); /* Altura mínima da ul para tornar dragable mesmo que vazio*/
+}
+User_COLUMN {
+   width: 100%;
+}
+
+#add-task-btn {
+   background-color: var(--primary-color);
+   border-bottom-right-radius: 5px;
+   border-bottom-left-radius: 5px;
+   cursor: pointer;
+   padding: 6px;
+}
+
+#add-task-btn:hover {
+   box-shadow: 0px 0px 1px 1px black;
+}
+
+.scrolable-ul {
+   overflow-y: auto;
+   height: 100%;
+}
+/* Personaliza a barra de rolagem para elementos com .scrolable-ul */
+.scrolable-ul::-webkit-scrollbar {
+   width: 8px; /* Espessura da barra de rolagem */
+}
+
+.scrolable-ul::-webkit-scrollbar-track {
+   background: var(--tertiary-color); /* Cor do trilho da barra de rolagem */
+   border-radius: 8px;
+}
+
+.scrolable-ul::-webkit-scrollbar-thumb {
+   background: #888; /* Cor da barra de rolagem */
+   border-radius: 8px; /*Arredonda os cantos*/
+}
+
+.scrolable-ul::-webkit-scrollbar-thumb:hover {
+   background: #555; /* Cor da barra de rolagem ao passar o mouse */
+}
+
+footer {
+   display: flex;
+   background-color: var(--secondary-color);
+   color: var(--text-color2);
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+   padding: 0px 0;
+   width: 100%;
+   position: relative;
+   bottom: 0;
+   height: 40px;
+}
+footer p {
+   margin: 0;
+   font-size: 13px;
+}
+
+/* UNORDERED LIST FOR TASKS */
+ul {
+   padding-left: 0px;
+}
+
+.banner {
+   background-color: var(--quaternary-color); /* Cor de fundo ligeiramente diferente */
+   text-align: center;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+   margin-bottom: 0px; /* Espaço entre o banner e o content */
+   display: flex; /* Alinha ícone e texto na mesma linha */
+   align-items: center; /* Centraliza verticalmente */
+}
+
+.deleted-banner {
+   background-color: var(--deleted_banner);
+   text-align: center;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+   margin-bottom: 0px; /* Espaço entre o banner e o content */
+   display: flex; /* Alinha ícone e texto na mesma linha */
+   align-items: center; /* Centraliza verticalmente */
+   color: white;
+}
+.content {
+   padding: 2px;
+}
+
+.button-edit {
+   width: 25px;
+   height: 25px;
+   padding: 0px;
+}
+
+.themes-id {
+   width: 2000px;
+}
+.task-item,
+.task-item-deleted {
+   border-radius: 10px;
+   list-style-type: none; /* Remove o ponto */
+   background-color: var(--quinary-color);
+   padding: 0px;
+   overflow: hidden;
+   margin: 5px auto;
+   width: 90%;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.task-item-deleted {
+   width: 100%;
+}
+.user-item,
+.task-item-deleted {
+   cursor: pointer;
+}
+#TODO_COLUMN .banner {
+   background-color: var(--todo-color);
+   opacity: 0.8;
+}
+#DOING_COLUMN .banner {
+   background-color: var(--doing-color);
+   opacity: 0.8;
+}
+#DONE_COLUMN .banner {
+   background-color: var(--done-color);
+   opacity: 0.8;
+}
+.eliminated-todo .banner {
+   background-color: var(--todo-color);
+   opacity: 0.8;
+}
+.eliminated-doing .banner {
+   background-color: var(--doing-color);
+   opacity: 0.6;
+}
+.eliminated-done .banner {
+   background-color: var(--done-color);
+   opacity: 0.8;
+}
+
+#TODO_COLUMN .task-item:hover .banner,
+#DOING_COLUMN .task-item:hover .banner,
+#DONE_COLUMN .task-item:hover .banner,
+#DELETED_COLUMN .task-item-deleted:hover .banner {
+   opacity: 1; /* Aumenta a opacidade para 1 no hover */
+}
+
+.task-item:hover,
+.task-item-deleted {
+   cursor: pointer;
+   transform: translate(-2px, -2px); /* Move o elemento 5px para a direita e 5px para cima */
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Adiciona uma sombra para efeito de elevação*/
+}
+.task-item:hover button,
+.task-item:hover .banner,
+.task-item-deleted:hover button,
+.task-item-deleted:hover button {
+   opacity: 1; /* Torna o botão totalmente opaco quando o mouse sobre o task-item */
+}
+
+.task-item h3,
+.task-item p,
+.user-item h3,
+.task-item-deleted h3,
+.task-item-deleted p {
+   margin: 0px 8px; /* Espaçamento entre titulo*/
+   word-wrap: break-word; /* Quebra palavras longas para não ultrapassar a largura */
+}
+
+.task-item button,
+.task-item-deleted button {
+   opacity: 0;
+   transition: opacity 0.3s; /* Adiciona uma transição suave para a opacidade */
+   float: right;
+   margin-left: 0px;
+   padding: 1px 8px;
+   border-radius: 2px;
+   border: none;
+   background-color: var(--quinary-color);
+   cursor: pointer;
+}
+
+.task-item button:hover,
+.task-item-deleted button:hover {
+   background-color: #e0e0e0; /* Cor de fundo ao passar o mouse */
+}
+.task-item button img,
+.task-item-deleted button img {
+   width: 14px; /* Ou qualquer tamanho que se adeque ao seu design */
+   height: auto;
+}
+.priority-div {
+   max-width: 15px;
+   min-width: 8px;
+   max-height: 15px;
+   min-height: 8px;
+   float: left;
+   padding: 1px 1px;
+   margin: 4px 5px 0px 5px;
+   font-size: 8px;
+   border-radius: 10px;
+   overflow: hidden;
+}
+.high-priority {
+   background-color: red;
+   opacity: 0.5;
+}
+.medium-priority {
+   background-color: rgb(237, 241, 7);
+   opacity: 0.8;
+}
+.low-priority {
+   background-color: rgb(51, 255, 0);
+   opacity: 0.5;
+}
+.task-item:hover .high-priority,
+.task-item:hover .medium-priority,
+.task-item:hover .low-priority {
+   opacity: 1;
+}
+
+/*Especifico pagina retrospetivas*/
+
+.retrospective-main {
+   display: flex;
+   flex-direction: column;
+   height: calc(100% - 90px); /* Ajuste para ocupar a altura total disponÃ­vel */
+   width: 99%;
+   align-self: center;
+   margin: 5px 0px;
+   display: flex;
+   flex-direction: row;
+   flex-grow: 1;
+   gap: 15px;
+}
+.historic-retrospectives {
+   height: 100%;
+}
+.mainRetrospectivesForm {
+   flex: 1;
+}
+
+/*Forms*/
+form {
+   display: flex;
+   flex-direction: column;
+   background-color: var(--form-background); /* Transparência */
+   padding: 20px;
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+   border-radius: 10px;
+   max-width: 600px;
+}
+
+input[type="date"],
+input[type="textarea"] {
+   width: calc(100% - 20px); /* Correção para evitar colagem nas bordas */
+   padding: 10px;
+   margin: 10px 0;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   transition: border-color 0.3s, box-shadow 0.3s;
+}
+#title {
+   color: var(--text-color);
+   background-color: var(--primary-color);
+}
+#title:disabled {
+   background-color: var(--terciary-color);
+   color: var(--text-color);
+}
+/* Estilos para textarea */
+textarea {
+   width: calc(100% - 20px); /* Faz a textarea ocupar calc(100% - 20px) da largura do elemento pai */
+   padding: 10px; /* Espaço interno para o texto */
+   margin: 10px 0; /* Margem exterior */
+   border: 1px solid #ddd; /* Borda */
+   border-radius: 4px; /* Bordas arredondadas */
+   resize: none; /* Impede o usuário de redimensionar a textarea */
+   min-height: 100px;
+   color: var(--text-color);
+   background-color: var(--primary-color);
+   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna para um efeito sutil */
+   transition: border-color 0.3s, box-shadow 0.3s; /* Transição suave para foco e interações */
+}
+textarea:disabled {
+   background-color: var(--terciary-color);
+   color: var(--text-color);
+}
+
+#taskForm-viewer-edition #title,
+#taskForm-viewer-edition #description {
+   border: none;
+   box-shadow: none;
+   color: var(--text-color);
+}
+
+.row-task-viewer {
+   display: flex;
+   justify-content: space-between;
+}
+
+textarea:focus {
+   outline: none;
+   border-color: #007aff;
+   box-shadow: 0 0 8px rgba(0, 122, 255, 0.6);
+}
+
+input[type="submit"] {
+   width: 100%;
+   padding: 10px;
+   border: none;
+   border-radius: 4px;
+   background-color: #9cc1e8;
+   color: white;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+#save-task {
+   margin: 5px 0px;
+   width: 100%;
+   padding: 10px;
+   border: none;
+   border-radius: 4px;
+   background-color: #9cc1e8;
+   color: white;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+#save-task:hover {
+   background-color: #d7e2ef;
+}
+
+input[type="submit"]:hover {
+   background-color: #d7e2ef;
+}
+button#cancel-edit {
+   align-self: flex-end;
+}
+
+.row-back-buttons {
+   background-color: #9c9797; /* Cor vermelha para cancelar */
+   color: white;
+   cursor: pointer;
+   margin-right: 100px;
+   margin-top: 10px;
+   width: 90px;
+   height: 35px;
+}
+
+#background {
+   position: fixed;
+   height: 100%;
+   width: 100%;
+   border-radius: 8px;
+   visibility: hidden;
+   background-color: #1b1b1bae;
+   z-index: 2;
+}
+#modal_settings {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border-radius: 8px;
+   visibility: hidden;
+   z-index: 3;
+   background-color: var(--form-background);
+   padding: 20px;
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+   border-radius: 10px;
+   max-width: 600px;
+}
+
+#edit-btn {
+   background-color: var(--form-background);
+   border: none;
+}
+#edit-icon {
+   cursor: pointer;
+   width: 14px; /* Ou qualquer tamanho que se adeque ao seu design */
+   height: 14px;
+   border: none;
+}
+
+/* Animações e foco nos inputs */
+input[type="text"]:focus,
+input[type="password"]:focus {
+   outline: none;
+   border-color: #007aff;
+   box-shadow: 0 0 8px rgba(0, 122, 255, 0.6);
+}
+/*Other*/
+.task-viewer-editer-adder {
+   justify-content: center;
+   align-items: center;
+}
+.mainBoard {
+   width: 50%;
+   justify-content: center;
+}
+
+/*Estatisticas*/
+#task-bar-chart {
+   width: 100px; /* ou um valor específico maior */
+   height: 20px; /* altura maior para visibilidade */
+   display: flex;
+   flex-direction: row;
+   border-radius: 5px;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+   box-shadow: 2px 4px rgb(0, 0, 0);
+}
+
+.task-bar {
+   display: flex;
+   height: 100%; /* Use 100% para que as barras preencham totalmente a altura do contêiner */
+   transition: width 0.5s ease;
+
+   border: 2px;
+}
+
+#todo-bar {
+   /* Certifique-se de que essas classes correspondam às usadas no seu JavaScript */
+   background-color: var(--todo-color); /* Azul */
+}
+
+#doing-bar {
+   background-color: var(--doing-color); /* Amarelo */
+}
+
+#done-bar {
+   background-color: var(--done-color); /* Verde */
+}
+
+/*Settings*/
+
+#main-settings {
+   display: flex;
+   align-items: center;
+   align-items: center;
+   flex-direction: row;
+   width: 100%;
+   height: calc(100%-200px);
+}
+
+.mainBoard-settings,
+.settings-lists {
+   display: flex;
+   justify-self: center;
+   justify-content: center;
+   flex-direction: row;
+   width: 80%;
+   height: 100%;
+   flex-grow: 1;
+}
+.mainBoard-settings #theme,
+#delete-text,
+#user-list,
+#category-list {
+   font-weight: bold;
+}
+.box-container {
+   display: flex;
+   gap: 15px;
+   flex-direction: row;
+   background-color: var(--form-background); /* Transparência */
+   padding: 20px;
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+   border-radius: 10px;
+   height: calc(100% - 90px);
+   max-height: calc(100% - 90px);
+}
+
+.title-settingsList {
+   justify-content: center;
+   justify-self: center;
+   text-align: center;
+   font-weight: bold;
+}
+
+/**User Settings*/
+.user-item {
+   border-radius: 10px;
+   list-style-type: none; /* Remove o ponto */
+   background-color: var(--quinary-color);
+   padding: 0px;
+   overflow: hidden;
+   margin: 5px auto;
+   width: 90%;
+   max-width: 400px;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#usercard-content {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+
+.centralform {
+   display: flex;
+   height: 100%;
+   flex-grow: 1;
+   width: 15%;
+}
+#centralform {
+   width: 15%;
+}
+#User_COLUMN .banner {
+   background-color: var(--header-color);
+   color: var(--text-color2);
+}
+.col-user-list {
+   display: flex;
+}
+#col-users {
+   width: 10%;
+}
+
+#individual-user-info {
+   width: 100%;
+   height: 100%;
+}
+
+/* Form user edition on settings - Modernizado */
+#editProfileForm {
+   height: 100%;
+   width: 100%;
+   padding: 10px;
+   box-sizing: border-box;
+   background-image: url("./images/placeholderform.png");
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+}
+
+#editProfileForm .content {
+   max-height: 95%;
+   overflow-y: auto; /* Habilita a rolagem vertical */
+   display: flex;
+   flex-direction: column;
+   padding: 10px; /* Espaçamento interno */
+   border-radius: 8px; /* Bordas arredondadas */
+   background: var(--form-background); /* Fundo levemente transparente */
+}
+
+#editProfileForm label {
+   margin-bottom: 10px;
+   font-weight: 600;
+   color: #333; /* Cor mais escura para o texto */
+}
+
+#editProfileForm input[type="text"],
+#editProfileForm select {
+   margin-bottom: 5px;
+   padding: 5px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   box-sizing: border-box;
+   transition: border-color 0.3s ease; /* Transição suave */
+}
+
+#editProfileForm input[type="text"]:focus,
+#editProfileForm select:focus {
+   border-color: #007bff; /* Destaque ao focar */
+   outline: none;
+}
+
+#editProfileForm input[type="submit"] {
+   padding: 5px 9px;
+   background-color: var(--header-color);
+   color: white;
+   border: none;
+   border-radius: 8px;
+   cursor: pointer;
+   font-size: 14px;
+   transition: background-color 0.3s ease; /* Transição suave */
+}
+
+#editProfileForm input[type="submit"]:hover {
+   background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+}
+
+/*Botões painel ediçãõ de user em settings*/
+
+.other-functions-byUser {
+   display: flex;
+   flex-direction: column;
+   align-items: center; /* Alinha os botões ao centro, considerando a nova largura fixa */
+   gap: 8px; /* Espaçamento entre os botões */
+}
+
+.other-functions-byUser button {
+   background-color: var(--primary-color); /* Cor de fundo azul, ajustada conforme o tema */
+   color: var(--text-color2); /* Cor do texto branco, ajustada conforme o tema */
+   border: none;
+   border-radius: 5px; /* Bordas arredondadas */
+   padding: 8px; /* Padding ajustado para manter a consistência */
+   cursor: pointer;
+   text-align: center;
+   width: 150px; /* Define uma largura fixa para todos os botões */
+   box-sizing: border-box;
+   font-size: 14px; /* Tamanho da fonte ajustado */
+   margin-bottom: 10px; /* Espaçamento na parte inferior de cada botão */
+}
+
+.other-functions-byUser button:hover {
+   background-color: var(--quaternary-color); /* Cor de fundo ao passar o mouse, ajustada conforme o tema */
+}
+
+.other-functions-byUser button a {
+   color: var(--text-color2); /* Assegura que o texto dos links tenha a mesma cor dos botões */
+   text-decoration: none; /* Remove o sublinhado do link */
+   display: block; /* Faz o link ocupar todo o espaço do botão */
+}
+
+/*Deleted tasks*/
+
+.deleted-tasks,
+.categories-list {
+   flex-grow: 1;
+}
+#box-deletedTasks {
+   display: flex;
+   flex-wrap: wrap;
+   overflow-y: auto;
+   text-align: center;
+   align-content: flex-start;
+}
+
+#dark-theme,
+#light-theme {
+   cursor: pointer;
+}
+
+.numberOfTasks {
+   float: left;
+   margin-left: 10px;
+   color: grey;
+}
+
+.categories-list {
+   flex-grow: 1;
+}
+#DELETED_COLUMN {
+   width: 100%;
+   display: grid;
+   grid-gap: 15px; /* Espaçamento entre as tasks */
+   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+/*Category*/
+
+#div_addCategory {
+   flex-grow: 1;
+   width: 100%;
+   justify-self: center;
+}
+#box-categories {
+   display: flex;
+   flex-grow: 1;
+   flex-direction: column;
+   overflow-y: auto;
+   text-align: center;
+}
+#div_addCategory {
+   flex-grow: 1;
+}
+
+#categoryName {
+   height: 25px;
+   border-bottom-left-radius: 5px;
+   margin-left: 10px;
+
+   text-align: center;
+   font-size: 16px;
+   margin-right: 0px;
+   width: 40%;
+}
+#btn_addCategory {
+   height: 30px;
+   border-bottom-right-radius: 5px;
+   background-color: var(--primary-color);
+   cursor: pointer;
+   text-align: center;
+   font-size: 16px;
+   margin-left: -6px;
+   border-left: none;
+   width: 25%;
+}
+
+#btn_addCategory:hover {
+   background-color: var(--menu-hover);
+}
+
+.btn-filters,
+.homepage-filters {
+   margin-left: 8px;
+   border-radius: 5px;
+   height: 25px;
+   background-color: var(--todo-color);
+   border: black 1.5px solid;
+   color: var(--text-color);
+}
+
+.btn-filters {
+   cursor: pointer;
+}
+
+.homepage-filters:hover,
+.btn-filters:hover {
+   box-shadow: 0px 0px 1px 1px black;
+}
+
+.category_author {
+   margin-right: 10px;
+   font-size: 11px;
+   text-align: right;
+   width: 100%;
+}
+.categoriesTitle-style {
+   vertical-align: middle;
+   text-align: center;
+   font-size: 18px;
+   border-radius: 5px;
+   background-color: rgb(200, 200, 200);
+   transform: translate(10px, 0px);
+   border: 2px black solid;
+}
+
+/*Fotografia utilizador*/
+
+.user-photo-div {
+   background-color: #accae9;
+   width: 32px;
+   height: 32px;
+   border: 0px;
+   padding: 0px;
+   border-radius: 25px;
+   overflow: hidden;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   justify-self: baseline;
+}
+#userPhoto {
+   width: 32px;
+   height: auto;
+   border-radius: 25px;
+}
+
+/*Search bar*/
+.search-container,
+.search-container-tasks-deleted,
+.search-container-tasks {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   overflow: hidden;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+}
+#search-container-deleted,
+#search-container-tasks {
+   border-radius: 10px;
+}
+
+.search-container input[type="text"],
+.search-container-tasks input[type="text"] {
+   width: 100%;
+   margin: 0;
+   text-align: center;
+   border: 0px;
+}
+
+.user-role {
+   margin-left: 20px;
+}

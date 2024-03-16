@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- HTML File - contains the interactive content that is displayed -->
+<html lang="en">
+   <!------------------ Head ------------------------------------>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style.css" />
+      <script src="./js/settings.js" type="module"></script>
+      <script src="./js/username.js" type="module"></script>
+      <script src="./js/theme.js" type="module"></script>
+      <script src="./js/language.js" type="module"></script>
+      <title>Settings Page - AntNest</title>
+      <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+   </head>
+
+   <body>
+      <!------------------ Header ------------------------------------>
+      <header>
+         <a href="homepage.html"><img id="logo" src="images/logo.png" alt="IMG" /></a>
+
+         <!------------------ Navigation Menu ------------------------------------>
+         <div class="topnav">
+            <a id="nav-home" href="homepage.html">Homepage</a>
+            <a id="nav-retro" href="retrospective.html">Retrospective</a>
+            <a id="nav-sett" class="active" href="settings.html">Settings</a>
+            <a id="nav-exit">Exit</a>
+         </div>
+         <!------------------ Username ------------------------------------>
+         <div id="right-aligned">
+            <a href="editProfile.html"
+               ><h4><span id="usernameDisplay">Username</span></h4></a
+            >
+         </div>
+         <!------------------ Photo ------------------------------------>
+         <a id="userPhotolink" href="editProfile.html"
+            ><div class="user-photo-div"><img id="userPhoto" src="images/user.png" alt="" /></div
+         ></a>
+         <!------------------ Language Flags ------------------------------------>
+         <div class="top-right-flags" id="langFlag">
+            <ul>
+               <li><a id="langIndexPT">PT</a></li>
+               <li><a id="langIndexEN">EN</a></li>
+            </ul>
+         </div>
+      </header>
+
+      <main class="main-settings">
+         <div class="mainBoard-settings themes-id">
+            <!------------------ Colour Theme Options ------------------------------------>
+            <div class="col-leftMenu">
+               <br /><a id="theme">Theme</a><br />
+               <div class="box-container"><br /><a id="dark-theme">Dark</a> <br /><a id="light-theme">Light</a></div>
+            </div>
+         </div>
+         <br />
+         <div class="mainBoard-settings themes-id">
+            <!------------------ Colour Theme Options ------------------------------------>
+            <div class="col-leftMenu">
+               <br /><a id="delete-text">Account Deletion</a><br />
+               <form id="deleteForm">
+                  <p id="message-request">Please enter password to confirm deletion:</p>
+                  <input type="password" name="passAccount" id="passwordInput" placeholder="Password" />
+                  <input type="submit" id="deleteBtn" value="Delete" />
+               </form>
+            </div>
+         </div>
+      </main>
+      <!------------------ Footer ------------------------------------>
+      <footer>
+         <p id="footer"><span>Tiago Caniceiro & Bernardo Câmara @ DEI.UC.PT</span></p>
+      </footer>
+      <!------------------ Footer /end ------------------------------------>
+   </body>
+</html>

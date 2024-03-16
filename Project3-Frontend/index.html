@@ -1,0 +1,80 @@
+<!-- HTML File - contains the interactive content that is displayed -->
+<!-- VERSION 1.0.3b 04.02.2024 -->
+<!DOCTYPE html>
+<html lang="en">
+   <!--------------------------  Head -->
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Login Page - AntNest</title>
+      <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+      <link rel="stylesheet" href="index.css" />
+      <script src="./js/index.js" type="module"></script>
+      <script src="./js/language.js" type="module"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+   </head>
+
+   <body>
+      <!------------------ Header ------------------------------------>
+      <header>
+         <img id="logo" src="images/logo.png" alt="IMG" />
+
+         <!------------------ Language Flags ------------------------------------>
+         <div class="top-right-flags" id="langFlag">
+            <ul>
+               <li><a id="langIndexPT">PT</a></li>
+               <li><a id="langIndexEN">EN</a></li>
+            </ul>
+         </div>
+      </header>
+      <!------------------ Main ------------------------------------>
+      <main class="main-content" id="main-index">
+         <!------------------ LOGIN FORM ------------------------------------>
+         <form id="loginForm">
+            <div class="banner">
+               <img id="login-icon" src="images/user-login.png" alt="IMG" />
+               <p id="member-login-banner">Member Login</p>
+            </div>
+            <div class="content">
+               <label id="username-label" for="username">Username</label>
+               <input type="text" name="username" id="username" maxlength="25" placeholder="Enter your username" />
+               <div id="errorLogin"></div>
+               <label id="password-label" for="password">Password</label>
+               <input type="password" name="password" id="password" maxlength="25" placeholder="Enter your password" />
+               <input type="submit" id="login" value="Login" />
+            </div>
+         </form>
+         <div id="signup">Don't have an account? <a id="a_registration" href="registration.html">Sign up</a></div>
+      </main>
+
+      <!------------------ Footer ------------------------------------>
+      <footer>
+         <h3 id="footer">Tiago Caniceiro & Bernardo Câmara @ DEI.UC.PT</h3>
+         <div id="text-about">
+            <p id="text-about1"></p>
+         </div>
+         <h3 id="contact">Contact informations:</h3>
+         <p id="infosContact">You can reach us at our headquarters during workdays from 09:30 to 17:30</p>
+         <!-- Contact Details -->
+         <div>
+            <p id="adressTitle"><strong>Address:</strong></p>
+            <p id="address">Pólo II da Universidade de Coimbra, R. Silvio Lima, 3030-790 Coimbra</p>
+            <p id="phoneNumberTitle"><strong>Phone Number:</strong></p>
+            <p id="phoneNumber">239 790000</p>
+         </div>
+         <!-- Google Maps -->
+         <div>
+            <iframe
+               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3048.017274867193!2d-8.416103!3d40.186429!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd22f9952aaf6517%3A0xd3822ec1d359eb52!2sDEI%20-%20Departamento%20de%20Engenharia%20Inform%C3%A1tica%20-%20FCTUC!5e0!3m2!1spt-PT!2spt!4v1706552824250!5m2!1spt-PT!2spt"
+               width="400"
+               height="300"
+               style="border: 0"
+               allowfullscreen=""
+               loading="lazy"
+               referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+         </div>
+      </footer>
+      <!------------------ Footer /end ------------------------------------>
+   </body>
+</html>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="tiago-bernardo-proj3:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b4012590-de38-46a6-944e-b536cda31f2e" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2cb2nGDCrLTgspjdZiknU2A9nOs" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JBoss/WildFly Server.JBoss/WildFly 30.0.1.Final.executor": "Run",
+    "JUnit.TaskBeanTest.testGetTaskById_Found.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Bernardo/Desktop/AcertarORumo/Programação Avançada em Java/Projeto_1/projeto_scrum/scrum_project4/Project4-Backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "Errors",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="JBoss/WildFly Server.JBoss/WildFly 30.0.1.Final">
+    <configuration name="JBoss/WildFly 30.0.1.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 30.0.1.Final" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Project3-Frontend/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="SERVER" />
+        <option name="BINDING_SET_NAME" value="" />
+        <option name="DOMAIN" value="false" />
+        <option name="SERVER_GROUP" value="main-server-group" />
+        <option name="USERNAME" value="" />
+        <option name="CREDENTIAL_ALIAS" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="JBoss" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="58253" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Project3-Backend:war exploded" />
+          <artifact name="tiago-bernardo-proj3:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="TaskBeanTest.testGetTaskById_Found" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project3-Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aor.paj.bean.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aor.paj.bean" />
+      <option name="MAIN_CLASS_NAME" value="aor.paj.bean.TaskBeanTest" />
+      <option name="METHOD_NAME" value="testGetTaskById_Found" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JBoss/WildFly Server.JBoss/WildFly 30.0.1.Final" />
+      <item itemvalue="JUnit.TaskBeanTest.testGetTaskById_Found" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TaskBeanTest.testGetTaskById_Found" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b4012590-de38-46a6-944e-b536cda31f2e" name="Changes" comment="" />
+      <created>1708366123382</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708366123382</updated>
+      <workItem from="1708366124492" duration="400000" />
+      <workItem from="1708366540774" duration="615000" />
+      <workItem from="1708373980427" duration="70000" />
+      <workItem from="1708441338837" duration="2643000" />
+      <workItem from="1708526128719" duration="2732000" />
+      <workItem from="1708541415851" duration="3731000" />
+      <workItem from="1708597150506" duration="3806000" />
+      <workItem from="1708603338370" duration="18719000" />
+      <workItem from="1708645902820" duration="4927000" />
+      <workItem from="1708684235216" duration="460000" />
+      <workItem from="1708689137656" duration="17782000" />
+      <workItem from="1708726917544" duration="10508000" />
+      <workItem from="1708783801127" duration="16324000" />
+      <workItem from="1708816092365" duration="2320000" />
+      <workItem from="1708860679319" duration="5705000" />
+      <workItem from="1708868937579" duration="318000" />
+      <workItem from="1708871455759" duration="366000" />
+      <workItem from="1708874341933" duration="13473000" />
+      <workItem from="1708893433720" duration="2837000" />
+      <workItem from="1708906616745" duration="2944000" />
+      <workItem from="1708957923640" duration="12319000" />
+      <workItem from="1708977492084" duration="91000" />
+      <workItem from="1708979109459" duration="877000" />
+      <workItem from="1708981658796" duration="1041000" />
+      <workItem from="1708989631518" duration="2298000" />
+      <workItem from="1708992576827" duration="2718000" />
+      <workItem from="1709027751378" duration="8446000" />
+      <workItem from="1709045676906" duration="16979000" />
+      <workItem from="1709070945495" duration="4450000" />
+      <workItem from="1709117252625" duration="9579000" />
+      <workItem from="1709164156339" duration="1673000" />
+      <workItem from="1709173155836" duration="690000" />
+      <workItem from="1709175183828" duration="136000" />
+      <workItem from="1709199592930" duration="4176000" />
+      <workItem from="1709243987550" duration="3247000" />
+      <workItem from="1709286433470" duration="12158000" />
+      <workItem from="1709317573306" duration="3450000" />
+      <workItem from="1709379817616" duration="1902000" />
+      <workItem from="1709391291829" duration="3571000" />
+      <workItem from="1709401623440" duration="5744000" />
+      <workItem from="1709410483241" duration="1805000" />
+      <workItem from="1709463603410" duration="1684000" />
+      <workItem from="1709468482190" duration="502000" />
+      <workItem from="1709488002289" duration="10921000" />
+      <workItem from="1709504676860" duration="780000" />
+      <workItem from="1709505963256" duration="608000" />
+      <workItem from="1709564052860" duration="137000" />
+      <workItem from="1710242910883" duration="613000" />
+      <workItem from="1710243656486" duration="3080000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/aor/paj/bean/CategoryBean.java</url>
+          <line>59</line>
+          <properties class="aor.paj.bean.CategoryBean" method="editCategory">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/aor/paj/dao/UserDao.java</url>
+          <line>66</line>
+          <properties class="aor.paj.dao.UserDao" method="deleteUser">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/aor/paj/bean/UserBean.java</url>
+          <line>320</line>
+          <properties class="aor.paj.bean.UserBean" method="logout">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/aor/paj/dao/UserDao.java</url>
+          <line>27</line>
+          <properties class="aor.paj.dao.UserDao" method="updateUser">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/aor/paj/bean/TaskBean.java</url>
+          <line>140</line>
+          <properties class="aor.paj.bean.TaskBean" method="getAllTasksByCategory">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/aor/paj/bean/CategoryBean.java</url>
+          <line>82</line>
+          <properties class="aor.paj.bean.CategoryBean" method="categoryWithTasks">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/aor/paj/bean/CategoryBean.java</url>
+          <line>70</line>
+          <properties class="aor.paj.bean.CategoryBean" method="deleteCategory">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/aor/paj/bean/UserBean.java</url>
+          <line>124</line>
+          <properties class="aor.paj.bean.UserBean" method="tokenValidator">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

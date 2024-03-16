@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- HTML File - contains the interactive content that is displayed -->
+<html lang="en">
+   <!--------------------------  Head -->
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style.css" />
+      <script src="./js/homepage.js" type="module"></script>
+      <script src="./js/username.js" type="module"></script>
+      <script src="./js/theme.js" type="module"></script>
+      <script src="./js/language.js" type="module"></script>
+      <title>Homepage - AntNest</title>
+      <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+   </head>
+
+   <body class="theme-light">
+      <!------------------ Header ------------------------------------>
+      <header>
+         <a href="homepage.html"><img id="logo" src="images/logo.png" alt="IMG" /></a>
+         <!------------------ Navigation Menu ------------------------------------>
+         <div class="topnav">
+            <a id="nav-home" class="active" href="#home">Homepage</a>
+            <a id="nav-retro" href="retrospective.html">Retrospective</a>
+            <a id="nav-sett" href="settings.html">Settings</a>
+            <a id="nav-exit">Exit</a>
+         </div>
+         <!------------------ Username ------------------------------------>
+         <div id="right-aligned">
+            <a href="editProfile.html"
+               ><h4><span id="usernameDisplay">Username</span></h4></a
+            >
+         </div>
+         <!------------------ Photo ------------------------------------>
+         <a id="userPhotolink" href="editProfile.html"
+            ><div class="user-photo-div"><img id="userPhoto" src="images/user.png" alt="" /></div
+         ></a>
+         <!------------------ Language Flags ------------------------------------>
+         <div class="top-right-flags" id="langFlag">
+            <ul>
+               <li><a id="langIndexPT">PT</a></li>
+               <li><a id="langIndexEN">EN</a></li>
+            </ul>
+         </div>
+      </header>
+      <!------------------ Main ------------------------------------>
+      <main>
+         <div class="mainBoard-tasks-container">
+            <!------------------ Leftmost Column -------------------------------->
+            <aside class="col-leftMenu" id="aside-menu">
+               <h4 class="no_function menu-item" id="create-project">Create Project</h4>
+               <h4 class="no_function menu-item" id="select-project">Select Project</h4>
+               <h4 class="no_function menu-item" id="manage-backlog">Backlog Manager</h4>
+               <h4 class="no_function menu-item" id="select-sprint">Sprint Selector</h4>
+               <a href="projectSettingsUsers.html" class="menu-item set-pro" id="difSettings-users"><h4>Users</h4></a
+               ><a href="projectSettingsTasksCategory.html" class="menu-item set-pro" id="difSettings-tasks"
+                  ><h4>Tasks</h4></a
+               >
+               <a href="projectSettingsCategories.html" class="menu-item set-pro" id="difSettings-categories"
+                  ><h4>Categories</h4></a
+               >
+            </aside>
+            <div class="right-container">
+               <!------------------ Row with statistics/ Progression Bar / Filters -------------------------------->
+               <div class="horizontal-section">
+                  <div id="left-div-horizontal-sec">
+                     <div id="project-overview">
+                        <h4 id="sprint-progress">Progress:</h4>
+                        <div id="task-bar-chart"></div>
+                     </div>
+                     <div class="search-container-tasks" id="search-container-tasks">
+                        <input type="text" id="taskSearch" placeholder="🔍 Search tasks" />
+                     </div>
+                  </div>
+                  <div id="filter-dection"></div>
+               </div>
+               <!------------------ Columns TODO - Content added by .js  -------------------------------->
+               <div class="tasks-row">
+                  <div class="col-todo">
+                     <div class="header-list">
+                        <div class="invisible-counter"></div>
+                        <h4 id="col-todo-text">TO DO</h4>
+                        <div class="count-div-circle">
+                           <h3 id="todo-count"></h3>
+                        </div>
+                     </div>
+                     <div class="scrolable-ul">
+                        <ul class="ul-tasks" id="TODO_COLUMN"></ul>
+                     </div>
+                     <!------------------ Add Task Button -------------------------------->
+                     <a id="add-task-btn" class="btn-add" onclick="location.href='task.html';">Add Task</a>
+                  </div>
+                  <!------------------ Columns DOING - Content added by .js  -------------------------------->
+                  <div class="col-doing">
+                     <div class="header-list">
+                        <div class="invisible-counter"></div>
+                        <h4 id="col-doing-text">DOING</h4>
+                        <div class="count-div-circle">
+                           <h3 id="doing-count"></h3>
+                        </div>
+                     </div>
+                     <div class="scrolable-ul">
+                        <ul class="ul-tasks" id="DOING_COLUMN"></ul>
+                     </div>
+                  </div>
+                  <!------------------ Columns DONE - Content added by .js  -------------------------------->
+                  <div class="col-done">
+                     <div class="header-list">
+                        <div class="invisible-counter"></div>
+                        <h4 id="col-done-text">DONE</h4>
+                        <div class="count-div-circle">
+                           <h3 id="done-count"></h3>
+                        </div>
+                     </div>
+                     <div class="scrolable-ul">
+                        <ul class="ul-tasks" id="DONE_COLUMN"></ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+      <!------------------ Footer ------------------------------------>
+      <footer>
+         <p id="footer"><span>Tiago Caniceiro & Bernardo Câmara @ DEI.UC.PT</span></p>
+      </footer>
+      <!------------------ Footer /end ------------------------------------>
+   </body>
+</html>

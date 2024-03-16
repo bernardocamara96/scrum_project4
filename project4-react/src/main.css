@@ -1,0 +1,20 @@
+* {
+   font-family: Helvetica, sans-serif;
+}
+
+body {
+   background-color: rgba(5, 16, 46, 0.9);
+}
+
+input {
+   padding: 10px;
+   border-radius: 5px;
+}
+#logo {
+   max-width: 88px;
+   height: auto;
+   display: flex;
+   margin-right: 20px;
+   margin-left: 20px;
+   cursor: pointer;
+}

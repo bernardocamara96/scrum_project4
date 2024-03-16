@@ -1,0 +1,3062 @@
+{
+	"info": {
+		"_postman_id": "03fc2eb1-3dea-46e0-ae51-f1727f04111b",
+		"name": "Project3-Tasks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32788170",
+		"_collection_link": "https://lively-spaceship-992404.postman.co/workspace/Workspace---AoR---2024~e53d9bf5-abfb-4e61-a1db-883e0d22b76b/collection/32788170-03fc2eb1-3dea-46e0-ae51-f1727f04111b?action=share&source=collection_link&creator=32788170"
+	},
+	"item": [
+		{
+			"name": "PositiveTests",
+			"item": [
+				{
+					"name": "Create Task",
+					"item": [
+						{
+							"name": "New Task",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "username",
+										"value": "canicfghj23",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "password",
+										"value": "11fghjfghj1",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "_wf1GusHpfxUFB6zci1_jP-5-KSUOgSl",
+										"type": "text"
+									},
+									{
+										"key": "type",
+										"value": "backend2",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "   {\r\n        \"description\": \"ffff\",\r\n        \"priority\": 1,\r\n        \"title\": \"qweaasfddd\",\r\n        \"status\":100,\r\n        \"startDate\":\"2022-12-12\"\r\n    \r\n       \r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/create/frontend",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"create",
+										"frontend"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Task",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "   {\r\n        \"description\": \"wesdfd\",\r\n        \"priority\": 1,\r\n        \"startDate\": \"2024-02-24\",\r\n        \"endDate\": \"2024-05-21\",\r\n        \"status\": 300,\r\n        \"title\": \"qweadd\",\r\n        \"username\": \"ProductOwner\"\r\n    }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/create/{{type}}",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"task",
+												"create",
+												"{{type}}"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "27"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 16:12:56 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "A new task has been created"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get Tasks",
+					"item": [
+						{
+							"name": "Get All Tasks",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "username",
+										"value": "canicoman123",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "password",
+										"value": "11111111",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "user",
+										"value": "canicoman123",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "fQAfOlBPW7-MqtT0hisHaQqnvMUuIzOS",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"all"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get All Tasks",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/all",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"task",
+												"all"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1322"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 17:00:14 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfdwq efql ichqlwui clqwiu bccwbeq lcbkucwrt gwv oifq cowqfl ihqlwf uqhwl fuhfqwrliu fhqlwun fcluqw hbflukaw bvcluqrw hluqr hlukqwnclurwq rluwq cluqwn lqwu ecluq wrfuqr wnrlcu n\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 1,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"admin\"\n    },\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfd\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 2,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"developerTest\"\n    },\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfd\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 3,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"scrumMasterTest\"\n    },\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfd\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 4,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"admin\"\n    },\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"asdfasdf\",\n        \"id\": 5,\n        \"priority\": 2,\n        \"status\": 100,\n        \"title\": \"asdfasdf\",\n        \"username_author\": \"BrunoAlx\"\n    },\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfd\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 6,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"admin\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Get All Tasks by User",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "deleted",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/allbyuser?username=ProductOwner",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"allbyuser"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "ProductOwner"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get All Tasks by User",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/allbyuser?username=admin",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"task",
+												"allbyuser"
+											],
+											"query": [
+												{
+													"key": "username",
+													"value": "admin"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "760"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 17:00:57 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfdwq efql ichqlwui clqwiu bccwbeq lcbkucwrt gwv oifq cowqfl ihqlwf uqhwl fuhfqwrliu fhqlwun fcluqw hbflukaw bvcluqrw hluqr hlukqwnclurwq rluwq cluqwn lqwu ecluq wrfuqr wnrlcu n\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 1,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"admin\"\n    },\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfd\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 4,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"admin\"\n    },\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfd\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 6,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"admin\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Get All By Category",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/allbycategory?category=No_Category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"allbycategory"
+									],
+									"query": [
+										{
+											"key": "category",
+											"value": "No_Category"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get All By Category",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/allbycategory?category=No_Category",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"task",
+												"allbycategory"
+											],
+											"query": [
+												{
+													"key": "category",
+													"value": "No_Category"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1322"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 17:01:42 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfdwq efql ichqlwui clqwiu bccwbeq lcbkucwrt gwv oifq cowqfl ihqlwf uqhwl fuhfqwrliu fhqlwun fcluqw hbflukaw bvcluqrw hluqr hlukqwnclurwq rluwq cluqwn lqwu ecluq wrfuqr wnrlcu n\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 1,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"admin\"\n    },\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfd\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 2,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"developerTest\"\n    },\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfd\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 3,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"scrumMasterTest\"\n    },\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfd\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 4,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"admin\"\n    },\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"asdfasdf\",\n        \"id\": 5,\n        \"priority\": 2,\n        \"status\": 100,\n        \"title\": \"asdfasdf\",\n        \"username_author\": \"BrunoAlx\"\n    },\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfd\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 6,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"admin\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Get Task By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"2"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Task By Id",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"task",
+												"2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "202"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 17:04:16 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category_type\": \"No_Category\",\n    \"deleted\": false,\n    \"description\": \"wesdfd\",\n    \"endDate\": \"2024-05-21\",\n    \"id\": 2,\n    \"priority\": 1,\n    \"startDate\": \"2024-02-24\",\n    \"status\": 100,\n    \"title\": \"qweadd\",\n    \"username_author\": \"developerTest\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get All Tasks Not Deleted",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/allnotdeleted",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"allnotdeleted"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get All Tasks Not Deleted",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/allnotdeleted",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"task",
+												"allnotdeleted"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1322"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 17:05:06 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfdwq efql ichqlwui clqwiu bccwbeq lcbkucwrt gwv oifq cowqfl ihqlwf uqhwl fuhfqwrliu fhqlwun fcluqw hbflukaw bvcluqrw hluqr hlukqwnclurwq rluwq cluqwn lqwu ecluq wrfuqr wnrlcu n\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 1,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"admin\"\n    },\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfd\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 2,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"developerTest\"\n    },\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfd\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 3,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"scrumMasterTest\"\n    },\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfd\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 4,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"admin\"\n    },\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"asdfasdf\",\n        \"id\": 5,\n        \"priority\": 2,\n        \"status\": 100,\n        \"title\": \"asdfasdf\",\n        \"username_author\": \"BrunoAlx\"\n    },\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfd\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 6,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"admin\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "All Deleted Tasks",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/alldeleted",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"alldeleted"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "All Deleted Tasks",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/alldeleted",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"task",
+												"alldeleted"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "154"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 17:10:36 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": true,\n        \"description\": \"asdfasdf\",\n        \"id\": 5,\n        \"priority\": 2,\n        \"status\": 100,\n        \"title\": \"asdfasdf\",\n        \"username_author\": \"BrunoAlx\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Get Task By Username and Category",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/allbyuserandcategory?username=admin&category=No_Category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"allbyuserandcategory"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "admin"
+										},
+										{
+											"key": "category",
+											"value": "No_Category"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Task By Username and Category",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/allbyuserandcategory?username=admin&category=No_Category",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"task",
+												"allbyuserandcategory"
+											],
+											"query": [
+												{
+													"key": "username",
+													"value": "admin"
+												},
+												{
+													"key": "category",
+													"value": "No_Category"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "760"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 17:14:45 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfdwq efql ichqlwui clqwiu bccwbeq lcbkucwrt gwv oifq cowqfl ihqlwf uqhwl fuhfqwrliu fhqlwun fcluqw hbflukaw bvcluqrw hluqr hlukqwnclurwq rluwq cluqwn lqwu ecluq wrfuqr wnrlcu n\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 1,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"admin\"\n    },\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfd\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 4,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"admin\"\n    },\n    {\n        \"category_type\": \"No_Category\",\n        \"deleted\": false,\n        \"description\": \"wesdfd\",\n        \"endDate\": \"2024-05-21\",\n        \"id\": 6,\n        \"priority\": 1,\n        \"startDate\": \"2024-02-24\",\n        \"status\": 100,\n        \"title\": \"qweadd\",\n        \"username_author\": \"admin\"\n    }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Edit Task",
+					"item": [
+						{
+							"name": "Edit one task",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n        \"title\":\"task updated\",\r\n        \"description\": \"description updated\",\r\n        \"priority\": 3,\r\n        \"category_type\":\"backend3\",\r\n        \"startDate\":\"2024-12-12\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/edit/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"edit",
+										"2"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Edit one task",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "    {\r\n        \"description\": \"wjjghjjed\",\r\n        \"priority\": 3,\r\n        \"status\": 300,\r\n        \"startDate\": \"2024-02-24\",\r\n        \"endDate\": \"2024-05-21\",\r\n        \"title\": \"Novo\",\r\n        \"username_author\": \"admin\",\r\n        \"category_type\": \"No_Category\",\r\n        \"deleted\": false\r\n    }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/edit/3",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"task",
+												"edit",
+												"3"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "25"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 20:03:48 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "Task updated successfuly."
+								}
+							]
+						},
+						{
+							"name": "Change Task Status",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/status/2/100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"status",
+										"2",
+										"100"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Change Task Status",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/status/2/100",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"task",
+												"status",
+												"2",
+												"100"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "19"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 20:10:38 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "Task status updated"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"item": [
+						{
+							"name": "Delete Task by id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "FVqcZuU9BFQEkmePkegUc9QkQoPdpQwa",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "://localhost:8080/tiago-bernardo-proj3/rest/task/delete/1",
+									"protocol": "",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"delete",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete Task by id",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "://localhost:8080/tiago-bernardo-proj3/rest/task/delete/2",
+											"protocol": "",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"task",
+												"delete",
+												"2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "30"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 03 Mar 2024 20:46:17 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "This task permanently deleted "
+								}
+							]
+						},
+						{
+							"name": "Delete Task Temporarily By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "token",
+										"value": "z9RohmJynK-ibzN-TQ04cgbTNgRUSA57",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "://localhost:8080/tiago-bernardo-proj3/rest/task/deletetemp/11",
+									"protocol": "",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"deletetemp",
+										"11"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete Task Temporarily By Id",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "://localhost:8080/tiago-bernardo-proj3/rest/task/deletetemp/6",
+											"protocol": "",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"task",
+												"deletetemp",
+												"6"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "34"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 03 Mar 2024 20:47:34 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "This task was successfully deleted"
+								}
+							]
+						},
+						{
+							"name": "Delete All Tasks By User",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "token",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/deletetemp/all/ProductOwner",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"deletetemp",
+										"all",
+										"ProductOwner"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete All Tasks By User",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/deletetemp/all/admin",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"task",
+												"deletetemp",
+												"all",
+												"admin"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "27"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 03 Mar 2024 20:48:05 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "Tasks sucecessfully deleted"
+								}
+							]
+						},
+						{
+							"name": "recycle task by id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/tiago-bernardo-proj3/rest/task/recycle/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"recycle",
+										"3"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "recycle task by id",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "localhost:8080/tiago-bernardo-proj3/rest/task/recycle/3",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"task",
+												"recycle",
+												"3"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "35"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 03 Mar 2024 20:48:33 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "This task was successfully recycled"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Permission To Edit Task",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{adminToken}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{scrumMasterToken}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "token",
+								"value": "{{developerToken}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/permission/edit/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tiago-bernardo-proj3",
+								"rest",
+								"task",
+								"permission",
+								"edit",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Permission To Edit Task",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/permission/edit/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"permission",
+										"edit",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Mar 2024 20:49:15 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				},
+				{
+					"name": "Permission to Delete task",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{adminToken}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{scrumMasterToken}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "token",
+								"value": "{{developerToken}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/permission/delete/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tiago-bernardo-proj3",
+								"rest",
+								"task",
+								"permission",
+								"delete",
+								"8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Permission to Delete task",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/permission/delete/8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"permission",
+										"delete",
+										"8"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Mar 2024 20:49:31 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "NegativeTests",
+			"item": [
+				{
+					"name": "New Task - User Login Fail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{adminToken}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "token",
+								"value": "{{scrumMasterToken}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "token",
+								"value": "{{developerToken}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n        \"description\": \"wesuuudfd\",\r\n        \"priority\": 1,\r\n        \"startDate\": \"2024-02-24\",\r\n        \"endDate\": \"2024-04-24\",\r\n        \"title\": \"qweadd\",\r\n        \"username\": \"admin\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/create/No_Category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tiago-bernardo-proj3",
+								"rest",
+								"task",
+								"create",
+								"No_Category"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Task - User Login Fail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "   {\r\n        \"description\": \"wesuuudfd\",\r\n        \"priority\": 1,\r\n        \"startDate\": \"2024-02-24\",\r\n        \"endDate\": \"2024-04-24\",\r\n        \"title\": \"qweadd\",\r\n        \"username\": \"admin\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/create/No_Category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"create",
+										"No_Category"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "raw",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/octet-stream"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Mar 2024 20:39:00 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "User permissions violated"
+						}
+					]
+				},
+				{
+					"name": "New Task - Invalid Data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{adminToken}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{scrumMasterToken}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "token",
+								"value": "{{developerToken}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n        \"description\": \"wesdfd\",\r\n        \"priority\": 100,\r\n        \"startDate\": \"2024-06-24\",\r\n        \"endDate\": \"2024-04-24\",\r\n        \"status\": 300,\r\n        \"title\": \"qweadd\",\r\n        \"username\": \"admin\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/create/No_Category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tiago-bernardo-proj3",
+								"rest",
+								"task",
+								"create",
+								"No_Category"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Task - Invalid Data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "   {\r\n        \"description\": \"wesdfd\",\r\n        \"priority\": 100,\r\n        \"startDate\": \"2024-06-24\",\r\n        \"endDate\": \"2024-04-24\",\r\n        \"status\": 300,\r\n        \"title\": \"qweadd\",\r\n        \"username\": \"admin\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/create/No_Category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"create",
+										"No_Category"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "raw",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/octet-stream"
+								},
+								{
+									"key": "Content-Length",
+									"value": "17"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Mar 2024 20:40:13 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "Invalid task data"
+						}
+					]
+				},
+				{
+					"name": "Get All Tasks By User - Permission",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "user",
+								"value": "canicoman123",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "token",
+								"value": "{{adminToken}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "token",
+								"value": "{{scrumMasterToken}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "token",
+								"value": "{{developerToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tiago-bernardo-proj3",
+								"rest",
+								"task",
+								"all"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Tasks By User - Permission",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "user",
+										"value": "canicoman123",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"all"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Mar 2024 20:41:33 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "User permissions violated"
+						}
+					]
+				},
+				{
+					"name": "Get All Tasks By User - Not Loged In",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{adminToken}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "token",
+								"value": "{{scrumMasterToken}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "token",
+								"value": "{{developerToken}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/allbyuser?username=admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tiago-bernardo-proj3",
+								"rest",
+								"task",
+								"allbyuser"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "admin"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Tasks By User - Not Loged In",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/task/allbyuser?username=admin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"task",
+										"allbyuser"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "admin"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Mar 2024 20:43:55 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "User permissions violated"
+						}
+					]
+				},
+				{
+					"name": "Delete Task by id - Not Found",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "username",
+								"value": "canicoman123",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "123123",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "://localhost:8080/tiago-daniel-proj2/rest/task/delete/10",
+							"protocol": "",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tiago-daniel-proj2",
+								"rest",
+								"task",
+								"delete",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Task by id Copy",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "username",
+										"value": "canicoman123",
+										"type": "text"
+									},
+									{
+										"key": "password",
+										"value": "123123",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "://localhost:8080/Project3-Backend/rest/task/delete/10",
+									"protocol": "",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Project3-Backend",
+										"rest",
+										"task",
+										"delete",
+										"10"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "14"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Feb 2024 12:10:42 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "Task not found"
+						}
+					]
+				},
+				{
+					"name": "Delete Task by id - Permission Violated",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "username",
+								"value": "canicoman123",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "123123",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "://localhost:8080/tiago-daniel-proj2/rest/task/delete/100",
+							"protocol": "",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tiago-daniel-proj2",
+								"rest",
+								"task",
+								"delete",
+								"100"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Task by id - Not Found Copy",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "username",
+										"value": "canicoman123",
+										"type": "text"
+									},
+									{
+										"key": "password",
+										"value": "123123",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "://localhost:8080/Project3-Backend/rest/task/delete/100",
+									"protocol": "",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Project3-Backend",
+										"rest",
+										"task",
+										"delete",
+										"100"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "60"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Feb 2024 12:14:27 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "User permissions violated. Can't delete tasks of other users"
+						}
+					]
+				},
+				{
+					"name": "Delete Task by id - Not Loged In",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "username",
+								"value": "canicoman123",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "password",
+								"value": "123123",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "://localhost:8080/tiago-daniel-proj2/rest/task/delete/10",
+							"protocol": "",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tiago-daniel-proj2",
+								"rest",
+								"task",
+								"delete",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Task by id - Permission Violated Copy",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "username",
+										"value": "canicoman123",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "password",
+										"value": "123123",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "://localhost:8080/Project3-Backend/rest/task/delete/10",
+									"protocol": "",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Project3-Backend",
+										"rest",
+										"task",
+										"delete",
+										"10"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "18"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Feb 2024 12:14:50 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "User not logged in"
+						}
+					]
+				},
+				{
+					"name": "Edit one task - Not Found",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "username",
+								"value": "canicoman123",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "123123",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"description\": \"wed\",\r\n        \"priority\": 300,\r\n        \"status\": 100,\r\n        \"username\": \"canicoman123\",\r\n        \"removeStartDate\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tiago-daniel-proj2/rest/task/edit/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tiago-daniel-proj2",
+								"rest",
+								"task",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit one task Copy",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "username",
+										"value": "canicoman123",
+										"type": "text"
+									},
+									{
+										"key": "password",
+										"value": "123123",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n        \"description\": \"wed\",\r\n        \"priority\": 300,\r\n        \"status\": 100,\r\n        \"username\": \"canicoman123\",\r\n        \"removeStartDate\": true\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/Project3-Backend/rest/task/edit/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Project3-Backend",
+										"rest",
+										"task",
+										"edit",
+										"1"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "raw",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/octet-stream"
+								},
+								{
+									"key": "Content-Length",
+									"value": "14"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Feb 2024 14:58:56 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "Task not found"
+						}
+					]
+				},
+				{
+					"name": "Edit one task - Permissions Violated",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "username",
+								"value": "canicoman123",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "123123",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"description\": \"wed\",\r\n        \"priority\": 300,\r\n        \"status\": 100,\r\n        \"username\": \"canicoman123\",\r\n        \"removeStartDate\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tiago-daniel-proj2/rest/task/edit/100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tiago-daniel-proj2",
+								"rest",
+								"task",
+								"edit",
+								"100"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit one task - Not Found Copy",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "username",
+										"value": "canicoman123",
+										"type": "text"
+									},
+									{
+										"key": "password",
+										"value": "123123",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n        \"description\": \"wed\",\r\n        \"priority\": 300,\r\n        \"status\": 100,\r\n        \"username\": \"canicoman123\",\r\n        \"removeStartDate\": true\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/Project3-Backend/rest/task/edit/100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Project3-Backend",
+										"rest",
+										"task",
+										"edit",
+										"100"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "raw",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/octet-stream"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Feb 2024 15:02:24 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "User permissions violated. Can't edit tasks of other users"
+						}
+					]
+				},
+				{
+					"name": "Edit one task - Permissions Violated Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "username",
+								"value": "canicoman123",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "123123",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"description\": \"wed\",\r\n        \"priority\": 300,\r\n        \"status\": 100,\r\n        \"username\": \"canicoman123\",\r\n        \"removeStartDate\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tiago-daniel-proj2/rest/task/edit/33",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tiago-daniel-proj2",
+								"rest",
+								"task",
+								"edit",
+								"33"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit one task - Permissions Violated Copy",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "username",
+										"value": "canicoman123",
+										"type": "text"
+									},
+									{
+										"key": "password",
+										"value": "123123",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n        \"description\": \"wed\",\r\n        \"priority\": 300,\r\n        \"status\": 100,\r\n        \"username\": \"canicoman123\",\r\n        \"removeStartDate\": true\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/Project3-Backend/rest/task/edit/33",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Project3-Backend",
+										"rest",
+										"task",
+										"edit",
+										"33"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "raw",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/octet-stream"
+								},
+								{
+									"key": "Content-Length",
+									"value": "18"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Feb 2024 15:04:39 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "User not logged in"
+						}
+					]
+				}
+			]
+		}
+	]
+}

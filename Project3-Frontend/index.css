@@ -1,0 +1,196 @@
+/* Estilo aplicado no index */
+body {
+   font-family: "Helvetica Neue", Arial, sans-serif;
+   background-color: rgba(5, 16, 46, 0.9);
+   /*background-image: url('images/backgroundIndexMain.jpg'); 
+    background-size: cover;
+    background-attachment: fixed; 
+    background-position: center;*/
+   color: #353333;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh; /* Altura mínima para preencher a tela */
+}
+
+header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   color: #ffffff;
+   text-align: center;
+   width: 100%;
+   padding: 0px 0;
+   background-color: rgba(100, 91, 91, 0.2); /* Adicionando um fundo translúcido */
+   position: fixed;
+   top: 0;
+   backdrop-filter: blur(5px);
+   z-index: 2;
+}
+/******************************************
+FLAGS
+******************************************/
+.top-right-flags li {
+   display: inline;
+   margin-right: 10px;
+}
+
+.top-right-flags a {
+   color: #fff;
+   text-decoration: none;
+}
+.top-right-flags a:hover {
+   color: #bcc6db;
+   cursor: pointer;
+   text-decoration: none;
+}
+
+.top-right-flags a.active {
+   text-decoration: underline;
+   font-weight: bold;
+}
+
+.main-content {
+   flex: 1; /* Isso faz com que o conteúdo principal preencha o espaço disponível */
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   min-height: calc(100vh - 2px);
+}
+
+footer {
+   background-color: rgba(145, 150, 157, 0.6); /* Transparência fosca */
+   color: #fff;
+   text-align: center;
+   padding: 20px 0px 0px 0px;
+   width: 100%;
+   position: static;
+   bottom: 0;
+}
+
+#text-about {
+   background-color: #ffffff;
+   color: #333;
+   text-align: justify;
+   padding: 50px 50px;
+}
+#text-about p {
+   text-indent: 40px; /* Adiciona recuo na primeira linha de cada parágrafo */
+}
+
+/* Estilo do banner */
+.banner {
+   background-color: rgba(231, 237, 242, 0.2); /* Cor de fundo ligeiramente diferente */
+   padding: 15px;
+   text-align: center;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+   margin-bottom: 10px; /* Espaço entre o banner e o content */
+   display: flex; /* Alinha ícone e texto na mesma linha */
+   align-items: center; /* Centraliza verticalmente */
+}
+
+#login-icon,
+#login-icon2 {
+   max-width: 36px; /* Ajuste o tamanho da imagem conforme necessário */
+   height: auto; /* Mantém a proporção da imagem */
+   display: FLEX; /* Isso pode ajudar a garantir que o estilo seja aplicado */
+   margin-right: 20px; /* Centraliza a imagem no banner */
+}
+#logo {
+   max-width: 88px; /* Ajuste o tamanho da imagem conforme necessário */
+   height: auto; /* Mantém a proporção da imagem */
+   display: flex; /* Isso pode ajudar a garantir que o estilo seja aplicado */
+   margin-right: 20px; /* Centraliza a imagem no banner */
+   margin-left: 20px;
+   cursor: pointer;
+}
+
+.content {
+   padding: 25px;
+}
+
+#main-index {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+#member-login-banner {
+   margin: 0;
+}
+
+#signup {
+   margin-top: 10px;
+   color: white;
+}
+
+#a_registration {
+   color: rgb(0, 183, 215);
+}
+/* Estilo do formulário com animação */
+form {
+   background-color: rgba(255, 255, 255, 0.3); /* Transparência */
+   width: 300px;
+   padding: 0px;
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+   border-radius: 10px;
+   animation: slide-in 0.5s ease-out;
+   transition: transform 0.2s ease; /* Adicionando transição para transformação */
+}
+
+#editPasswordForm {
+   margin-left: 10px;
+}
+
+form:hover {
+   transform: scale(1.02); /* Aumenta ligeiramente o tamanho do formulário */
+   box-shadow: -3px 3px 30px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"],
+input[type="password"] {
+   width: calc(100% - 20px); /* Correção para evitar colagem nas bordas */
+   padding: 10px;
+   margin: 10px 0;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="submit"] {
+   width: 100%;
+   padding: 10px;
+   border: none;
+   border-radius: 4px;
+   background-color: #9cc1e8;
+   color: white;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+   background-color: #d7e2ef;
+}
+
+/* Animações e foco nos inputs */
+input[type="text"]:focus,
+input[type="password"]:focus {
+   outline: none;
+   border-color: #007aff;
+   box-shadow: 0 0 8px rgba(0, 122, 255, 0.6);
+}
+
+#errorLogin {
+   color: red;
+}
+
+/*Registration*/
+#registrationForm .content *,
+#editProfileForm .content * {
+   padding: 4px;
+   margin: 4px;
+}

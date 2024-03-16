@@ -1,0 +1,3270 @@
+{
+	"info": {
+		"_postman_id": "b4be21ab-a5db-4e87-ae37-599f4de42af3",
+		"name": "Project3-Users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32788170",
+		"_collection_link": "https://lively-spaceship-992404.postman.co/workspace/Workspace---AoR---2024~e53d9bf5-abfb-4e61-a1db-883e0d22b76b/collection/32788170-b4be21ab-a5db-4e87-ae37-599f4de42af3?action=share&source=collection_link&creator=32788170"
+	},
+	"item": [
+		{
+			"name": "PositiveTests",
+			"item": [
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Login Admin/ProjectOwner",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "username",
+										"value": "canicoman123",
+										"type": "text"
+									},
+									{
+										"key": "password",
+										"value": "111111",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/Project3-Backend/rest/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Project3-Backend",
+										"rest",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "username",
+												"value": "canicoman123",
+												"type": "text"
+											},
+											{
+												"key": "password",
+												"value": "123123",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/Project3-Backend/rest/user/login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Project3-Backend",
+												"rest",
+												"user",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "16"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 15 Feb 2024 15:06:06 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "Successful Login"
+								}
+							]
+						},
+						{
+							"name": "Login ScrumMaster",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"var responseData = pm.response.json(); // Extrai o corpo da resposta como JSON",
+											"pm.globals.set(\"scrumMasterToken\", responseData.token); // Salva o token na variável global \"scrumMasterToken\""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "username",
+										"value": "canicoman123",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "password",
+										"value": "111111",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\":\"scrumMasterTest\",\n    \"password\": \"8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "username",
+												"value": "canicoman123",
+												"type": "text"
+											},
+											{
+												"key": "password",
+												"value": "123123",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/Project3-Backend/rest/user/login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Project3-Backend",
+												"rest",
+												"user",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "16"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 15 Feb 2024 15:06:06 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "Successful Login"
+								}
+							]
+						},
+						{
+							"name": "Login Developer",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"var responseData = pm.response.json(); // Extrai o corpo da resposta como JSON",
+											"pm.globals.set(\"developerToken\", responseData.token); // Salva o token na variável global \"developerToken\"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\":\"developerTest\",\n    \"password\": \"8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "username",
+												"value": "canicoman123",
+												"type": "text"
+											},
+											{
+												"key": "password",
+												"value": "123123",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/Project3-Backend/rest/user/login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Project3-Backend",
+												"rest",
+												"user",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "16"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 15 Feb 2024 15:06:06 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "Successful Login"
+								}
+							]
+						},
+						{
+							"name": "Login Other User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"var responseData = pm.response.json(); // Extrai o corpo da resposta como JSON",
+											"pm.globals.set(\"developerToken\", responseData.token); // Salva o token na variável global \"developerToken\"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\":\"BrunoAlx\",\n    \"password\": \"1111\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "username",
+												"value": "canicoman123",
+												"type": "text"
+											},
+											{
+												"key": "password",
+												"value": "123123",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/Project3-Backend/rest/user/login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Project3-Backend",
+												"rest",
+												"user",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "16"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 15 Feb 2024 15:06:06 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "Successful Login"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Registration",
+					"item": [
+						{
+							"name": "New Registration",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n    \"email\": \"3@ga121l.3com\",\r\n    \"firstName\": \"asdfffdf\",\r\n    \"lastName\": \"asdfffdf\",\r\n    \"password\": \"bernardo\",\r\n    \"phoneNumber\": \"1112222332233\",\r\n    \"photoURL\": \"asfdffdf\",\r\n    \"username\": \"bernardo\"\r\n   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"add"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Registration",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"aassaasf@gmdsalil.com\",\r\n    \"firstName\": \"asdf\",\r\n    \"lastName\": \"asdf\",\r\n    \"password\": \"111111\",\r\n    \"phoneNumber\": \"912232447\",\r\n    \"photoURL\": \"asdf\",\r\n    \"username\": \"canisdsn123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/Project3-Backend/rest/user/add",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Project3-Backend",
+												"rest",
+												"user",
+												"add"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "22"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 15 Feb 2024 15:17:26 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "A new user was created"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get Information",
+					"item": [
+						{
+							"name": "Get Photo And Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/getphotoandname",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"getphotoandname"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "username",
+												"value": "canicoman123",
+												"type": "text"
+											},
+											{
+												"key": "password",
+												"value": "123123",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/Project3-Backend/rest/user/getphoto",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Project3-Backend",
+												"rest",
+												"user",
+												"getphoto"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "207"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 15 Feb 2024 15:49:21 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"photoUrl\": \"https://img.freepik.com/fotos-gratis/retrato-de-homem-branco-isolado_53876-40306.jpg?w=1380&t=st=1708011856~exp=1708012456~hmac=11eb2b16335632054442d536f2a60bc7dd1fab2d1ba9894756eef2d88b7c60e4\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get user info",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "username",
+										"value": "canicoman123",
+										"type": "text"
+									},
+									{
+										"key": "password",
+										"value": "111111",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/Project3-Backend/rest/user/userinfo",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Project3-Backend",
+										"rest",
+										"user",
+										"userinfo"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "username",
+												"value": "canicoman123",
+												"type": "text"
+											},
+											{
+												"key": "password",
+												"value": "123123",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/Project3-Backend/rest/user/userinfo",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Project3-Backend",
+												"rest",
+												"user",
+												"userinfo"
+											],
+											"query": [
+												{
+													"key": "username",
+													"value": "canicoman123",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "328"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 15 Feb 2024 15:48:57 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"email\": \"asdsffgdf\",\n    \"firstName\": \"asdf\",\n    \"lastName\": \"8888888888\",\n    \"phoneNumber\": \"asdf@gmdail.com\",\n    \"photoURL\": \"https://img.freepik.com/fotos-gratis/retrato-de-homem-branco-isolado_53876-40306.jpg?w=1380&t=st=1708011856~exp=1708012456~hmac=11eb2b16335632054442d536f2a60bc7dd1fab2d1ba9894756eef2d88b7c60e4\",\n    \"username\": \"canicoman123\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get user info by username",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/userinfo/BrunoAleixo",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"userinfo",
+										"BrunoAleixo"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get user info by username",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/userinfo/BrunoAleixo",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"user",
+												"userinfo",
+												"BrunoAleixo"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "179"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 11:17:29 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"deleted\": true,\n    \"email\": \"aafsrf@gmdsalil.com\",\n    \"firstName\": \"asdsffgdf\",\n    \"lastName\": \"asdf\",\n    \"phoneNumber\": \"8888888888\",\n    \"photoURL\": \"asdf\",\n    \"role\": \"scrumMaster\",\n    \"username\": \"BrunoAleixo\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get All Users - Basic Information",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "username",
+										"value": "admin",
+										"type": "text"
+									},
+									{
+										"key": "password",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/Project3-Backend/rest/user/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Project3-Backend",
+										"rest",
+										"user",
+										"all"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "username",
+												"value": "admin",
+												"type": "text"
+											},
+											{
+												"key": "password",
+												"value": "admin",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/Project3-Backend/rest/user/all",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Project3-Backend",
+												"rest",
+												"user",
+												"all"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 15 Feb 2024 15:16:22 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"email\": \"sdc@ugds.si\",\n        \"firstName\": \"dsc\",\n        \"lastName\": \"sdc\",\n        \"password\": \"111111\",\n        \"phoneNumber\": \"wdv\",\n        \"photoURL\": \"sxc\",\n        \"username\": \"asdasd\"\n    },\n    {\n        \"email\": \"asdasd@asddas.asd\",\n        \"firstName\": \"asd\",\n        \"lastName\": \"asd\",\n        \"password\": \"111111\",\n        \"phoneNumber\": \"111asd\",\n        \"photoURL\": \"asda\",\n        \"username\": \"asd\"\n    },\n    {\n        \"email\": \"asdf@asdasd.asd\",\n        \"firstName\": \"asd\",\n        \"lastName\": \"asd\",\n        \"password\": \"123123\",\n        \"phoneNumber\": \"999999999\",\n        \"photoURL\": \"https://www.suinostopgen.com.br/wp-content/uploads/2022/05/Javali.jpg\",\n        \"username\": \"canicoman123\"\n    },\n    {\n        \"email\": \"asdf@asdas.asd\",\n        \"firstName\": \"asd\",\n        \"lastName\": \"asd\",\n        \"password\": \"111111\",\n        \"phoneNumber\": \"asd\",\n        \"photoURL\": \"asd\",\n        \"username\": \"aaas\"\n    },\n    {\n        \"email\": \"asdfdasdasd.asd\",\n        \"firstName\": \"asd\",\n        \"lastName\": \"asd\",\n        \"password\": \"111111\",\n        \"phoneNumber\": \"asdf\",\n        \"photoURL\": \"asd\",\n        \"username\": \"canicomzxcan123\"\n    },\n    {\n        \"email\": \"asdasd@adsdsasd.asd\",\n        \"firstName\": \"asd\",\n        \"lastName\": \"asd\",\n        \"password\": \"111111\",\n        \"phoneNumber\": \"\",\n        \"photoURL\": \"aasd\",\n        \"username\": \"cansan123\"\n    },\n    {\n        \"email\": \"asddasd@adsdsasd.asd\",\n        \"firstName\": \"asd\",\n        \"lastName\": \"asd\",\n        \"password\": \"111111\",\n        \"phoneNumber\": \"\",\n        \"photoURL\": \"aasd\",\n        \"username\": \"casdnsan123\"\n    },\n    {\n        \"email\": \"asda@s.asd.asd\",\n        \"firstName\": \"asd\",\n        \"lastName\": \"sad\",\n        \"password\": \"111111\",\n        \"phoneNumber\": \"23423452345\",\n        \"photoURL\": \"ads\",\n        \"username\": \"casdf123\"\n    },\n    {\n        \"email\": \"asfdsfa@asdasd.asd\",\n        \"firstName\": \"asfd\",\n        \"lastName\": \"sadf\",\n        \"password\": \"111111\",\n        \"phoneNumber\": \"345345345\",\n        \"photoURL\": \"asdf\",\n        \"username\": \"caniedn123\"\n    },\n    {\n        \"email\": \"asda@asd.asd\",\n        \"firstName\": \"asd\",\n        \"lastName\": \"asd\",\n        \"password\": \"qweqwe\",\n        \"phoneNumber\": \"333333333\",\n        \"photoURL\": \"https://img.freepik.com/fotos-gratis/um-touro-com-grandes-chifres-esta-em-uma-montanha_1340-35170.jpg?w=740&t=st=1707491093~exp=1707491693~hmac=1a5967e9e1c58d695d2e8643d7151f6c0459a0c6347aa387c6cdb856ab154c0c\",\n        \"username\": \"qweqwe\"\n    },\n    {\n        \"email\": \"asdf@gmdail.com\",\n        \"firstName\": \"asdf\",\n        \"lastName\": \"asdf\",\n        \"password\": \"111111\",\n        \"phoneNumber\": \"912232447\",\n        \"photoURL\": \"asdf\",\n        \"username\": \"canicomand123\"\n    },\n    {\n        \"email\": \"aasdf@gmdail.com\",\n        \"firstName\": \"asdf\",\n        \"lastName\": \"asdf\",\n        \"password\": \"111111\",\n        \"phoneNumber\": \"912232447\",\n        \"photoURL\": \"asdf\",\n        \"username\": \"canicomand123a\"\n    },\n    {\n        \"email\": \"tfdv@efsr.ihg\",\n        \"firstName\": \"kjkyub\",\n        \"lastName\": \"iuhoiuhn\",\n        \"password\": \"000000\",\n        \"phoneNumber\": \"098098098\",\n        \"photoURL\": \"oiuhjiu\",\n        \"username\": \"canicoman12\"\n    },\n    {\n        \"email\": \"aasdf@gmdalil.com\",\n        \"firstName\": \"asdf\",\n        \"lastName\": \"asdf\",\n        \"password\": \"111111\",\n        \"phoneNumber\": \"912232447\",\n        \"photoURL\": \"asdf\",\n        \"username\": \"ckjhnlkj\"\n    },\n    {\n        \"email\": \"ferron.klopper@example.com\",\n        \"firstName\": \"asdas\",\n        \"lastName\": \"Klopper\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"3242342343\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/44.jpg\",\n        \"username\": \"generas\"\n    },\n    {\n        \"email\": \"swathi.shah@example.com\",\n        \"firstName\": \"Swathi\",\n        \"lastName\": \"Shah\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"7311868496\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/15.jpg\",\n        \"username\": \"swathi.shah\"\n    },\n    {\n        \"email\": \"amoli.sheikh@example.com\",\n        \"firstName\": \"Amoli\",\n        \"lastName\": \"Sheikh\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"7659666584\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/25.jpg\",\n        \"username\": \"amoli.sheikh\"\n    },\n    {\n        \"email\": \"paola.solis@example.com\",\n        \"firstName\": \"Paola\",\n        \"lastName\": \"Solís\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(610) 701 0030\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/64.jpg\",\n        \"username\": \"paola.solis\"\n    },\n    {\n        \"email\": \"baris.akman@example.com\",\n        \"firstName\": \"Barış\",\n        \"lastName\": \"Akman\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(664)-169-1371\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/40.jpg\",\n        \"username\": \"baris.akman\"\n    },\n    {\n        \"email\": \"melike.gunday@example.com\",\n        \"firstName\": \"Melike\",\n        \"lastName\": \"Günday\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(512)-985-8323\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/58.jpg\",\n        \"username\": \"melike.gunday\"\n    },\n    {\n        \"email\": \"andrew.denk@example.com\",\n        \"firstName\": \"Andrew\",\n        \"lastName\": \"Denk\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"0100-5623553\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/20.jpg\",\n        \"username\": \"andrew.denk\"\n    },\n    {\n        \"email\": \"batur.akar@example.com\",\n        \"firstName\": \"Batur\",\n        \"lastName\": \"Akar\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(893)-073-8438\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/74.jpg\",\n        \"username\": \"batur.akar\"\n    },\n    {\n        \"email\": \"tomislav.ognjanovic@example.com\",\n        \"firstName\": \"Tomislav\",\n        \"lastName\": \"Ognjanović\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"023-3003-212\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/77.jpg\",\n        \"username\": \"tomislav.ognjanovic\"\n    },\n    {\n        \"email\": \"steve.caldwell@example.com\",\n        \"firstName\": \"Steve\",\n        \"lastName\": \"Caldwell\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"021-359-4299\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/99.jpg\",\n        \"username\": \"steve.caldwell\"\n    },\n    {\n        \"email\": \"amber.clark@example.com\",\n        \"firstName\": \"Amber\",\n        \"lastName\": \"Clark\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"011-217-6770\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/42.jpg\",\n        \"username\": \"amber.clark\"\n    },\n    {\n        \"email\": \"sophia.lavigne@example.com\",\n        \"firstName\": \"Sophia\",\n        \"lastName\": \"Lavigne\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"O73 X49-3183\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/88.jpg\",\n        \"username\": \"sophia.lavigne\"\n    },\n    {\n        \"email\": \"folkert.fix@example.com\",\n        \"firstName\": \"Folkert\",\n        \"lastName\": \"Fix\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"0851-0208711\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/49.jpg\",\n        \"username\": \"folkert.fix\"\n    },\n    {\n        \"email\": \"eva.mackay@example.com\",\n        \"firstName\": \"Eva\",\n        \"lastName\": \"Mackay\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"U63 Z98-6357\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/9.jpg\",\n        \"username\": \"eva.mackay\"\n    },\n    {\n        \"email\": \"ozsu.sozeri@example.com\",\n        \"firstName\": \"Özsu\",\n        \"lastName\": \"Sözeri\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(727)-806-7455\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/36.jpg\",\n        \"username\": \"ozsu.sozeri\"\n    },\n    {\n        \"email\": \"cecilia.lemaire@example.com\",\n        \"firstName\": \"Cecilia\",\n        \"lastName\": \"Lemaire\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"076 515 12 16\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/48.jpg\",\n        \"username\": \"cecilia.lemaire\"\n    },\n    {\n        \"email\": \"afina.tockiy@example.com\",\n        \"firstName\": \"Afina\",\n        \"lastName\": \"Tockiy\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(098) P72-3284\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/94.jpg\",\n        \"username\": \"afina.tockiy\"\n    },\n    {\n        \"email\": \"izolda.radosavljevic@example.com\",\n        \"firstName\": \"Izolda\",\n        \"lastName\": \"Radosavljević\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"036-6916-516\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/48.jpg\",\n        \"username\": \"izolda.radosavljevic\"\n    },\n    {\n        \"email\": \"alice.russell@example.com\",\n        \"firstName\": \"Alice\",\n        \"lastName\": \"Russell\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"05-0219-2993\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/69.jpg\",\n        \"username\": \"alice.russell\"\n    },\n    {\n        \"email\": \"eleonora.stevanovic@example.com\",\n        \"firstName\": \"Eleonora\",\n        \"lastName\": \"Stevanović\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"011-8147-002\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/30.jpg\",\n        \"username\": \"eleonora.stevanovic\"\n    },\n    {\n        \"email\": \"anita.hein@example.com\",\n        \"firstName\": \"Anita\",\n        \"lastName\": \"Hein\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"0556-6222955\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/34.jpg\",\n        \"username\": \"anita.hein\"\n    },\n    {\n        \"email\": \"cameron.wagner@example.com\",\n        \"firstName\": \"Cameron\",\n        \"lastName\": \"Wagner\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"09-9748-6853\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/94.jpg\",\n        \"username\": \"cameron.wagner\"\n    },\n    {\n        \"email\": \"prs.njty@example.com\",\n        \"firstName\": \"پارسا\",\n        \"lastName\": \"نجاتی\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"089-32279059\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/39.jpg\",\n        \"username\": \"prs.njty\"\n    },\n    {\n        \"email\": \"sava.jelacic@example.com\",\n        \"firstName\": \"Sava\",\n        \"lastName\": \"Jelačić\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"020-1870-258\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/73.jpg\",\n        \"username\": \"sava.jelacic\"\n    },\n    {\n        \"email\": \"todd.sanchez@example.com\",\n        \"firstName\": \"Todd\",\n        \"lastName\": \"Sanchez\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"03-0042-9738\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/17.jpg\",\n        \"username\": \"todd.sanchez\"\n    },\n    {\n        \"email\": \"louise.olivier@example.com\",\n        \"firstName\": \"Louise\",\n        \"lastName\": \"Olivier\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"04-01-54-65-93\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/79.jpg\",\n        \"username\": \"louise.olivier\"\n    },\n    {\n        \"email\": \"ceyhan.ozdenak@example.com\",\n        \"firstName\": \"Ceyhan\",\n        \"lastName\": \"Özdenak\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(146)-865-5666\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/45.jpg\",\n        \"username\": \"ceyhan.ozdenak\"\n    },\n    {\n        \"email\": \"ellen.harris@example.com\",\n        \"firstName\": \"Ellen\",\n        \"lastName\": \"Harris\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"021-630-2570\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/82.jpg\",\n        \"username\": \"ellen.harris\"\n    },\n    {\n        \"email\": \"rene.hale@example.com\",\n        \"firstName\": \"Rene\",\n        \"lastName\": \"Hale\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(520) 363-2226\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/5.jpg\",\n        \"username\": \"rene.hale\"\n    },\n    {\n        \"email\": \"margarete.bernard@example.com\",\n        \"firstName\": \"Margarete\",\n        \"lastName\": \"Bernard\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"076 730 19 40\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/19.jpg\",\n        \"username\": \"margarete.bernard\"\n    },\n    {\n        \"email\": \"chloe.brown@example.com\",\n        \"firstName\": \"Chloe\",\n        \"lastName\": \"Brown\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(304) 863-5488\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/4.jpg\",\n        \"username\": \"chloe.brown\"\n    },\n    {\n        \"email\": \"annie.leclerc@example.com\",\n        \"firstName\": \"Annie\",\n        \"lastName\": \"Leclerc\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"079 369 57 13\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/48.jpg\",\n        \"username\": \"annie.leclerc\"\n    },\n    {\n        \"email\": \"latife.atan@example.com\",\n        \"firstName\": \"Latife\",\n        \"lastName\": \"Atan\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(720)-171-1878\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/28.jpg\",\n        \"username\": \"latife.atan\"\n    },\n    {\n        \"email\": \"brn.sltnynjd@example.com\",\n        \"firstName\": \"باران\",\n        \"lastName\": \"سلطانی نژاد\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"003-85438734\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/92.jpg\",\n        \"username\": \"brn.sltnynjd\"\n    },\n    {\n        \"email\": \"ftmh.mhmdkhn@example.com\",\n        \"firstName\": \"فاطمه\",\n        \"lastName\": \"محمدخان\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"060-02893171\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/8.jpg\",\n        \"username\": \"ftmh.mhmdkhn\"\n    },\n    {\n        \"email\": \"sara.stone@example.com\",\n        \"firstName\": \"Sara\",\n        \"lastName\": \"Stone\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"071-163-4318\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/16.jpg\",\n        \"username\": \"sara.stone\"\n    },\n    {\n        \"email\": \"glikeriya.bezborodko@example.com\",\n        \"firstName\": \"Glikeriya\",\n        \"lastName\": \"Bezborodko\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(099) U57-2787\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/45.jpg\",\n        \"username\": \"glikeriya.bezborodko\"\n    },\n    {\n        \"email\": \"fredy.marchand@example.com\",\n        \"firstName\": \"Fredy\",\n        \"lastName\": \"Marchand\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"077 856 93 91\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/52.jpg\",\n        \"username\": \"fredy.marchand\"\n    },\n    {\n        \"email\": \"giray.karabulut@example.com\",\n        \"firstName\": \"Giray\",\n        \"lastName\": \"Karabulut\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(784)-162-3060\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/20.jpg\",\n        \"username\": \"giray.karabulut\"\n    },\n    {\n        \"email\": \"modesto.menchaca@example.com\",\n        \"firstName\": \"Modesto\",\n        \"lastName\": \"Menchaca\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(678) 780 4605\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/26.jpg\",\n        \"username\": \"modesto.menchaca\"\n    },\n    {\n        \"email\": \"rhonda.peck@example.com\",\n        \"firstName\": \"Rhonda\",\n        \"lastName\": \"Peck\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(532) 202-1006\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/42.jpg\",\n        \"username\": \"rhonda.peck\"\n    },\n    {\n        \"email\": \"soledad.velasco@example.com\",\n        \"firstName\": \"Soledad\",\n        \"lastName\": \"Velasco\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"988-348-951\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/23.jpg\",\n        \"username\": \"soledad.velasco\"\n    },\n    {\n        \"email\": \"omur.gunday@example.com\",\n        \"firstName\": \"Ömür\",\n        \"lastName\": \"Günday\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(919)-414-7661\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/89.jpg\",\n        \"username\": \"omur.gunday\"\n    },\n    {\n        \"email\": \"silas.marie@example.com\",\n        \"firstName\": \"Silas\",\n        \"lastName\": \"Marie\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"075 287 71 79\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/46.jpg\",\n        \"username\": \"silas.marie\"\n    },\n    {\n        \"email\": \"laurie.martin@example.com\",\n        \"firstName\": \"Laurie\",\n        \"lastName\": \"Martin\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"B73 C21-7916\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/54.jpg\",\n        \"username\": \"laurie.martin\"\n    },\n    {\n        \"email\": \"irina.divac@example.com\",\n        \"firstName\": \"Irina\",\n        \"lastName\": \"Divac\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"028-7765-298\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/24.jpg\",\n        \"username\": \"irina.divac\"\n    },\n    {\n        \"email\": \"nicholas.lane@example.com\",\n        \"firstName\": \"Nicholas\",\n        \"lastName\": \"Lane\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"09-9568-6256\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/43.jpg\",\n        \"username\": \"nicholas.lane\"\n    },\n    {\n        \"email\": \"soledad.fernandez@example.com\",\n        \"firstName\": \"Soledad\",\n        \"lastName\": \"Fernández\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(632) 747 9302\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/21.jpg\",\n        \"username\": \"soledad.fernandez\"\n    },\n    {\n        \"email\": \"nurdan.sinanoglu@example.com\",\n        \"firstName\": \"Nurdan\",\n        \"lastName\": \"Sinanoğlu\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(522)-380-6685\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/11.jpg\",\n        \"username\": \"nurdan.sinanoglu\"\n    },\n    {\n        \"email\": \"ariana.rodrigues@example.com\",\n        \"firstName\": \"Ariana\",\n        \"lastName\": \"Rodrigues\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(77) 2139-0429\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/78.jpg\",\n        \"username\": \"ariana.rodrigues\"\n    },\n    {\n        \"email\": \"marcello.bonnet@example.com\",\n        \"firstName\": \"Marcello\",\n        \"lastName\": \"Bonnet\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"079 191 36 92\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/26.jpg\",\n        \"username\": \"marcello.bonnet\"\n    },\n    {\n        \"email\": \"alfredo.lopez@example.com\",\n        \"firstName\": \"Alfredo\",\n        \"lastName\": \"Lopez\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"015242 54978\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/95.jpg\",\n        \"username\": \"alfredo.lopez\"\n    },\n    {\n        \"email\": \"arthur.stanley@example.com\",\n        \"firstName\": \"Arthur\",\n        \"lastName\": \"Stanley\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"015395 66154\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/77.jpg\",\n        \"username\": \"arthur.stanley\"\n    },\n    {\n        \"email\": \"aleksej.zivojinovic@example.com\",\n        \"firstName\": \"Aleksej\",\n        \"lastName\": \"Živojinović\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"026-8120-906\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/87.jpg\",\n        \"username\": \"aleksej.zivojinovic\"\n    },\n    {\n        \"email\": \"zara.desouza@example.com\",\n        \"firstName\": \"Zará\",\n        \"lastName\": \"de Souza\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(82) 4444-0788\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/8.jpg\",\n        \"username\": \"zara.desouza\"\n    },\n    {\n        \"email\": \"valerio.sanchez@example.com\",\n        \"firstName\": \"Valerio\",\n        \"lastName\": \"Sanchez\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"078 856 56 83\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/4.jpg\",\n        \"username\": \"valerio.sanchez\"\n    },\n    {\n        \"email\": \"ismail.roger@example.com\",\n        \"firstName\": \"Ismail\",\n        \"lastName\": \"Roger\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"076 222 70 00\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/79.jpg\",\n        \"username\": \"ismail.roger\"\n    },\n    {\n        \"email\": \"david.fuentes@example.com\",\n        \"firstName\": \"David\",\n        \"lastName\": \"Fuentes\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(683) 141 9248\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/22.jpg\",\n        \"username\": \"david.fuentes\"\n    },\n    {\n        \"email\": \"arsenije.jevtic@example.com\",\n        \"firstName\": \"Arsenije\",\n        \"lastName\": \"Jevtić\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"012-5051-635\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/47.jpg\",\n        \"username\": \"arsenije.jevtic\"\n    },\n    {\n        \"email\": \"lukas.lambert@example.com\",\n        \"firstName\": \"Lukas\",\n        \"lastName\": \"Lambert\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"04-11-97-09-81\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/88.jpg\",\n        \"username\": \"lukas.lambert\"\n    },\n    {\n        \"email\": \"victoire.schmitt@example.com\",\n        \"firstName\": \"Victoire\",\n        \"lastName\": \"Schmitt\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"01-50-86-59-07\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/57.jpg\",\n        \"username\": \"victoire.schmitt\"\n    },\n    {\n        \"email\": \"gregorio.prieto@example.com\",\n        \"firstName\": \"Gregorio\",\n        \"lastName\": \"Prieto\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"929-831-242\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/85.jpg\",\n        \"username\": \"gregorio.prieto\"\n    },\n    {\n        \"email\": \"budimir.vidakovic@example.com\",\n        \"firstName\": \"Budimir\",\n        \"lastName\": \"Vidaković\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"012-4453-034\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/42.jpg\",\n        \"username\": \"budimir.vidakovic\"\n    },\n    {\n        \"email\": \"trupti.kouser@example.com\",\n        \"firstName\": \"Trupti\",\n        \"lastName\": \"Kouser\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"9658808389\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/42.jpg\",\n        \"username\": \"trupti.kouser\"\n    },\n    {\n        \"email\": \"alexis.mathieu@example.com\",\n        \"firstName\": \"Alexis\",\n        \"lastName\": \"Mathieu\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"05-65-31-13-30\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/44.jpg\",\n        \"username\": \"alexis.mathieu\"\n    },\n    {\n        \"email\": \"olivia.kuhn@example.com\",\n        \"firstName\": \"Olivia\",\n        \"lastName\": \"Kuhn\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"07-6448-0281\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/54.jpg\",\n        \"username\": \"olivia.kuhn\"\n    },\n    {\n        \"email\": \"gael.moulin@example.com\",\n        \"firstName\": \"Gaël\",\n        \"lastName\": \"Moulin\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"01-64-41-98-52\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/72.jpg\",\n        \"username\": \"gael.moulin\"\n    },\n    {\n        \"email\": \"onal.tunaboylu@example.com\",\n        \"firstName\": \"Önal\",\n        \"lastName\": \"Tunaboylu\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(218)-432-9210\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/89.jpg\",\n        \"username\": \"onal.tunaboylu\"\n    },\n    {\n        \"email\": \"jaap-jan.kooiman@example.com\",\n        \"firstName\": \"Jaap-Jan\",\n        \"lastName\": \"Kooiman\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(082) 8525728\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/94.jpg\",\n        \"username\": \"jaap-jan.kooiman\"\n    },\n    {\n        \"email\": \"faith.campbell@example.com\",\n        \"firstName\": \"Faith\",\n        \"lastName\": \"Campbell\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"021-691-2339\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/51.jpg\",\n        \"username\": \"faith.campbell\"\n    },\n    {\n        \"email\": \"joyce.sims@example.com\",\n        \"firstName\": \"Joyce\",\n        \"lastName\": \"Sims\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(689) 408-4985\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/78.jpg\",\n        \"username\": \"joyce.sims\"\n    },\n    {\n        \"email\": \"theo.walker@example.com\",\n        \"firstName\": \"Theo\",\n        \"lastName\": \"Walker\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"O59 T16-4573\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/87.jpg\",\n        \"username\": \"theo.walker\"\n    },\n    {\n        \"email\": \"vlatka.zivanovic@example.com\",\n        \"firstName\": \"Vlatka\",\n        \"lastName\": \"Živanović\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"021-6308-371\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/96.jpg\",\n        \"username\": \"vlatka.zivanovic\"\n    },\n    {\n        \"email\": \"pamela.soto@example.com\",\n        \"firstName\": \"Pamela\",\n        \"lastName\": \"Soto\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(239) 967-8596\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/40.jpg\",\n        \"username\": \"pamela.soto\"\n    },\n    {\n        \"email\": \"ece.tazegul@example.com\",\n        \"firstName\": \"Ece\",\n        \"lastName\": \"Tazegül\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(752)-032-3118\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/51.jpg\",\n        \"username\": \"ece.tazegul\"\n    },\n    {\n        \"email\": \"ruben.gordon@example.com\",\n        \"firstName\": \"Ruben\",\n        \"lastName\": \"Gordon\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"021-286-2181\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/16.jpg\",\n        \"username\": \"ruben.gordon\"\n    },\n    {\n        \"email\": \"emily.davies@example.com\",\n        \"firstName\": \"Emily\",\n        \"lastName\": \"Davies\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"041-774-9174\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/24.jpg\",\n        \"username\": \"emily.davies\"\n    },\n    {\n        \"email\": \"nico.danner@example.com\",\n        \"firstName\": \"Nico\",\n        \"lastName\": \"Danner\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"0416-1999660\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/18.jpg\",\n        \"username\": \"nico.danner\"\n    },\n    {\n        \"email\": \"kelly.robertson@example.com\",\n        \"firstName\": \"Kelly\",\n        \"lastName\": \"Robertson\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"05-2623-4845\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/92.jpg\",\n        \"username\": \"kelly.robertson\"\n    },\n    {\n        \"email\": \"mehmet.koslowski@example.com\",\n        \"firstName\": \"Mehmet\",\n        \"lastName\": \"Koslowski\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"0885-8746025\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/24.jpg\",\n        \"username\": \"mehmet.koslowski\"\n    },\n    {\n        \"email\": \"sean.stanley@example.com\",\n        \"firstName\": \"Sean\",\n        \"lastName\": \"Stanley\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"017684 25270\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/36.jpg\",\n        \"username\": \"sean.stanley\"\n    },\n    {\n        \"email\": \"ethan.wallace@example.com\",\n        \"firstName\": \"Ethan\",\n        \"lastName\": \"Wallace\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"00-1323-8762\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/9.jpg\",\n        \"username\": \"ethan.wallace\"\n    },\n    {\n        \"email\": \"diana.graves@example.com\",\n        \"firstName\": \"Diana\",\n        \"lastName\": \"Graves\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"015242 85604\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/11.jpg\",\n        \"username\": \"diana.graves\"\n    },\n    {\n        \"email\": \"marta.dominguez@example.com\",\n        \"firstName\": \"Marta\",\n        \"lastName\": \"Domínguez\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"982-932-578\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/2.jpg\",\n        \"username\": \"marta.dominguez\"\n    },\n    {\n        \"email\": \"faith.silva@example.com\",\n        \"firstName\": \"Faith\",\n        \"lastName\": \"Silva\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"041-700-6672\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/12.jpg\",\n        \"username\": \"faith.silva\"\n    },\n    {\n        \"email\": \"adalberto.tellez@example.com\",\n        \"firstName\": \"Adalberto\",\n        \"lastName\": \"Téllez\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(682) 728 9619\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/5.jpg\",\n        \"username\": \"adalberto.tellez\"\n    },\n    {\n        \"email\": \"jerry.wintermans@example.com\",\n        \"firstName\": \"Jerry\",\n        \"lastName\": \"Wintermans\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(029) 6292173\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/26.jpg\",\n        \"username\": \"jerry.wintermans\"\n    },\n    {\n        \"email\": \"allie.simmons@example.com\",\n        \"firstName\": \"Allie\",\n        \"lastName\": \"Simmons\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"071-097-0236\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/79.jpg\",\n        \"username\": \"allie.simmons\"\n    },\n    {\n        \"email\": \"dwarakanath.pujari@example.com\",\n        \"firstName\": \"Dwarakanath\",\n        \"lastName\": \"Pujari\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"9743253497\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/0.jpg\",\n        \"username\": \"dwarakanath.pujari\"\n    },\n    {\n        \"email\": \"aurora.berger@example.com\",\n        \"firstName\": \"Aurora\",\n        \"lastName\": \"Berger\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"078 962 97 67\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/71.jpg\",\n        \"username\": \"aurora.berger\"\n    },\n    {\n        \"email\": \"pamela.henderson@example.com\",\n        \"firstName\": \"Pamela\",\n        \"lastName\": \"Henderson\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"00-6855-5798\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/94.jpg\",\n        \"username\": \"pamela.henderson\"\n    },\n    {\n        \"email\": \"bhr.mrdy@example.com\",\n        \"firstName\": \"بهار\",\n        \"lastName\": \"مرادی\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"066-96600039\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/29.jpg\",\n        \"username\": \"bhr.mrdy\"\n    },\n    {\n        \"email\": \"victoria.amador@example.com\",\n        \"firstName\": \"Victoria\",\n        \"lastName\": \"Amador\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(625) 497 8537\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/64.jpg\",\n        \"username\": \"victoria.amador\"\n    },\n    {\n        \"email\": \"samuel.jackson@example.com\",\n        \"firstName\": \"Samuel\",\n        \"lastName\": \"Jackson\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(053)-634-8188\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/58.jpg\",\n        \"username\": \"samuel.jackson\"\n    },\n    {\n        \"email\": \"ruslana.pistalo@example.com\",\n        \"firstName\": \"Ruslana\",\n        \"lastName\": \"Pištalo\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"039-6628-671\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/19.jpg\",\n        \"username\": \"ruslana.pistalo\"\n    },\n    {\n        \"email\": \"mehmet.paksut@example.com\",\n        \"firstName\": \"Mehmet\",\n        \"lastName\": \"Paksüt\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(516)-210-7037\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/55.jpg\",\n        \"username\": \"mehmet.paksut\"\n    },\n    {\n        \"email\": \"nehrika.holla@example.com\",\n        \"firstName\": \"Nehrika\",\n        \"lastName\": \"Holla\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"8848707914\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/94.jpg\",\n        \"username\": \"nehrika.holla\"\n    },\n    {\n        \"email\": \"jesus.medina@example.com\",\n        \"firstName\": \"Jesús\",\n        \"lastName\": \"Medina\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"933-598-945\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/93.jpg\",\n        \"username\": \"jesus.medina\"\n    },\n    {\n        \"email\": \"patricia.moreno@example.com\",\n        \"firstName\": \"Patricia\",\n        \"lastName\": \"Moreno\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"015394 55243\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/21.jpg\",\n        \"username\": \"patricia.moreno\"\n    },\n    {\n        \"email\": \"felipe.ceja@example.com\",\n        \"firstName\": \"Felipe\",\n        \"lastName\": \"Ceja\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(664) 790 9646\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/57.jpg\",\n        \"username\": \"felipe.ceja\"\n    },\n    {\n        \"email\": \"tijana.nemanjic@example.com\",\n        \"firstName\": \"Tijana\",\n        \"lastName\": \"Nemanjić\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"013-7232-190\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/13.jpg\",\n        \"username\": \"tijana.nemanjic\"\n    },\n    {\n        \"email\": \"charlene.young@example.com\",\n        \"firstName\": \"Charlene\",\n        \"lastName\": \"Young\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(388) 890-0273\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/59.jpg\",\n        \"username\": \"charlene.young\"\n    },\n    {\n        \"email\": \"agnes.bartels@example.com\",\n        \"firstName\": \"Agnes\",\n        \"lastName\": \"Bartels\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"0999-4322875\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/14.jpg\",\n        \"username\": \"agnes.bartels\"\n    },\n    {\n        \"email\": \"eugene.little@example.com\",\n        \"firstName\": \"Eugene\",\n        \"lastName\": \"Little\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"019467 24244\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/28.jpg\",\n        \"username\": \"eugene.little\"\n    },\n    {\n        \"email\": \"lotta.pulkkinen@example.com\",\n        \"firstName\": \"Lotta\",\n        \"lastName\": \"Pulkkinen\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"09-258-485\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/91.jpg\",\n        \"username\": \"lotta.pulkkinen\"\n    },\n    {\n        \"email\": \"kubra.koc@example.com\",\n        \"firstName\": \"Kübra\",\n        \"lastName\": \"Koç\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(673)-649-9516\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/34.jpg\",\n        \"username\": \"kubra.koc\"\n    },\n    {\n        \"email\": \"marshall.long@example.com\",\n        \"firstName\": \"Marshall\",\n        \"lastName\": \"Long\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"031-448-2895\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/35.jpg\",\n        \"username\": \"marshall.long\"\n    },\n    {\n        \"email\": \"miguel.saez@example.com\",\n        \"firstName\": \"Miguel\",\n        \"lastName\": \"Sáez\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"927-484-267\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/36.jpg\",\n        \"username\": \"miguel.saez\"\n    },\n    {\n        \"email\": \"howard.davies@example.com\",\n        \"firstName\": \"Howard\",\n        \"lastName\": \"Davies\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"061-491-2989\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/51.jpg\",\n        \"username\": \"howard.davies\"\n    },\n    {\n        \"email\": \"nikolina.pistalo@example.com\",\n        \"firstName\": \"Nikolina\",\n        \"lastName\": \"Pištalo\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"026-3671-774\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/94.jpg\",\n        \"username\": \"nikolina.pistalo\"\n    },\n    {\n        \"email\": \"harold.jackson@example.com\",\n        \"firstName\": \"Harold\",\n        \"lastName\": \"Jackson\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"013873 23181\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/6.jpg\",\n        \"username\": \"harold.jackson\"\n    },\n    {\n        \"email\": \"lauri.hamalainen@example.com\",\n        \"firstName\": \"Lauri\",\n        \"lastName\": \"Hamalainen\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"03-521-334\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/67.jpg\",\n        \"username\": \"lauri.hamalainen\"\n    },\n    {\n        \"email\": \"gonzalo.arias@example.com\",\n        \"firstName\": \"Gonzalo\",\n        \"lastName\": \"Arias\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(638) 490 6496\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/59.jpg\",\n        \"username\": \"gonzalo.arias\"\n    },\n    {\n        \"email\": \"ahmet.dupont@example.com\",\n        \"firstName\": \"Ahmet\",\n        \"lastName\": \"Dupont\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"079 420 15 08\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/99.jpg\",\n        \"username\": \"ahmet.dupont\"\n    },\n    {\n        \"email\": \"euclides.pires@example.com\",\n        \"firstName\": \"Euclides\",\n        \"lastName\": \"Pires\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(37) 7744-8641\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/67.jpg\",\n        \"username\": \"euclides.pires\"\n    },\n    {\n        \"email\": \"prs.shylyrd@example.com\",\n        \"firstName\": \"پارسا\",\n        \"lastName\": \"سهيلي راد\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"008-21710393\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/78.jpg\",\n        \"username\": \"prs.shylyrd\"\n    },\n    {\n        \"email\": \"gregorio.roman@example.com\",\n        \"firstName\": \"Gregorio\",\n        \"lastName\": \"Román\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"928-120-085\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/49.jpg\",\n        \"username\": \"gregorio.roman\"\n    },\n    {\n        \"email\": \"cindel.steur@example.com\",\n        \"firstName\": \"Cindel\",\n        \"lastName\": \"Steur\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(005) 5423890\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/49.jpg\",\n        \"username\": \"cindel.steur\"\n    },\n    {\n        \"email\": \"josef.burns@example.com\",\n        \"firstName\": \"Josef\",\n        \"lastName\": \"Burns\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"015242 79956\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/68.jpg\",\n        \"username\": \"josef.burns\"\n    },\n    {\n        \"email\": \"fennechien.bakels@example.com\",\n        \"firstName\": \"Fennechien\",\n        \"lastName\": \"Bakels\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(0340) 260329\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/75.jpg\",\n        \"username\": \"fennechien.bakels\"\n    },\n    {\n        \"email\": \"ege.orge@example.com\",\n        \"firstName\": \"Ege\",\n        \"lastName\": \"Örge\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(110)-848-7727\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/12.jpg\",\n        \"username\": \"ege.orge\"\n    },\n    {\n        \"email\": \"milorad.ninkovic@example.com\",\n        \"firstName\": \"Milorad\",\n        \"lastName\": \"Ninković\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"019-8406-512\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/63.jpg\",\n        \"username\": \"milorad.ninkovic\"\n    },\n    {\n        \"email\": \"roberto.fuller@example.com\",\n        \"firstName\": \"Roberto\",\n        \"lastName\": \"Fuller\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"041-954-7647\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/91.jpg\",\n        \"username\": \"roberto.fuller\"\n    },\n    {\n        \"email\": \"ismael.arias@example.com\",\n        \"firstName\": \"Ismael\",\n        \"lastName\": \"Arias\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"960-888-484\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/72.jpg\",\n        \"username\": \"ismael.arias\"\n    },\n    {\n        \"email\": \"thn.hmdy@example.com\",\n        \"firstName\": \"ثنا\",\n        \"lastName\": \"احمدی\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"016-59550253\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/36.jpg\",\n        \"username\": \"thn.hmdy\"\n    },\n    {\n        \"email\": \"damjan.lazovic@example.com\",\n        \"firstName\": \"Damjan\",\n        \"lastName\": \"Lazović\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"026-6382-612\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/44.jpg\",\n        \"username\": \"damjan.lazovic\"\n    },\n    {\n        \"email\": \"lya.roger@example.com\",\n        \"firstName\": \"Lya\",\n        \"lastName\": \"Roger\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"02-29-28-10-52\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/54.jpg\",\n        \"username\": \"lya.roger\"\n    },\n    {\n        \"email\": \"cornee.stronkhorst@example.com\",\n        \"firstName\": \"Cornee\",\n        \"lastName\": \"Stronkhorst\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(057) 7365377\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/9.jpg\",\n        \"username\": \"cornee.stronkhorst\"\n    },\n    {\n        \"email\": \"curtis.may@example.com\",\n        \"firstName\": \"Curtis\",\n        \"lastName\": \"May\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"01-4275-7317\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/52.jpg\",\n        \"username\": \"curtis.may\"\n    },\n    {\n        \"email\": \"bozhemir.kalchenko@example.com\",\n        \"firstName\": \"Bozhemir\",\n        \"lastName\": \"Kalchenko\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(096) O00-8837\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/23.jpg\",\n        \"username\": \"bozhemir.kalchenko\"\n    },\n    {\n        \"email\": \"kiy.zolotnickiy@example.com\",\n        \"firstName\": \"Kiy\",\n        \"lastName\": \"Zolotnickiy\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(096) R28-7322\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/52.jpg\",\n        \"username\": \"kiy.zolotnickiy\"\n    },\n    {\n        \"email\": \"isai.barros@example.com\",\n        \"firstName\": \"Isaí\",\n        \"lastName\": \"Barros\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(67) 2784-6946\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/98.jpg\",\n        \"username\": \"isai.barros\"\n    },\n    {\n        \"email\": \"iker.mora@example.com\",\n        \"firstName\": \"Iker\",\n        \"lastName\": \"Mora\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"961-570-751\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/70.jpg\",\n        \"username\": \"iker.mora\"\n    },\n    {\n        \"email\": \"tyn.hmdy@example.com\",\n        \"firstName\": \"تینا\",\n        \"lastName\": \"احمدی\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"016-57758804\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/81.jpg\",\n        \"username\": \"tyn.hmdy\"\n    },\n    {\n        \"email\": \"albert.parker@example.com\",\n        \"firstName\": \"Albert\",\n        \"lastName\": \"Parker\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"0115393 104 3170\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/28.jpg\",\n        \"username\": \"albert.parker\"\n    },\n    {\n        \"email\": \"fatma.elmastasoglu@example.com\",\n        \"firstName\": \"Fatma\",\n        \"lastName\": \"Elmastaşoğlu\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(186)-026-3428\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/95.jpg\",\n        \"username\": \"fatma.elmastasoglu\"\n    },\n    {\n        \"email\": \"holly.jones@example.com\",\n        \"firstName\": \"Holly\",\n        \"lastName\": \"Jones\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(990)-346-9657\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/14.jpg\",\n        \"username\": \"holly.jones\"\n    },\n    {\n        \"email\": \"eugenia.valladares@example.com\",\n        \"firstName\": \"Eugenia\",\n        \"lastName\": \"Valladares\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(680) 759 4278\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/62.jpg\",\n        \"username\": \"eugenia.valladares\"\n    },\n    {\n        \"email\": \"christian.hale@example.com\",\n        \"firstName\": \"Christian\",\n        \"lastName\": \"Hale\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"017687 34294\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/89.jpg\",\n        \"username\": \"christian.hale\"\n    },\n    {\n        \"email\": \"zoraide.daconceicao@example.com\",\n        \"firstName\": \"Zoraide\",\n        \"lastName\": \"da Conceição\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(68) 9786-6608\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/35.jpg\",\n        \"username\": \"zoraide.daconceicao\"\n    },\n    {\n        \"email\": \"philippe.sirko@example.com\",\n        \"firstName\": \"Philippe\",\n        \"lastName\": \"Sirko\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"E53 G87-7058\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/28.jpg\",\n        \"username\": \"philippe.sirko\"\n    },\n    {\n        \"email\": \"milo.bernard@example.com\",\n        \"firstName\": \"Milo\",\n        \"lastName\": \"Bernard\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"04-07-57-71-29\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/12.jpg\",\n        \"username\": \"milo.bernard\"\n    },\n    {\n        \"email\": \"gostyata.leonenko@example.com\",\n        \"firstName\": \"Gostyata\",\n        \"lastName\": \"Leonenko\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(099) P44-0589\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/27.jpg\",\n        \"username\": \"gostyata.leonenko\"\n    },\n    {\n        \"email\": \"aapo.mantyla@example.com\",\n        \"firstName\": \"Aapo\",\n        \"lastName\": \"Mantyla\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"03-922-168\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/34.jpg\",\n        \"username\": \"aapo.mantyla\"\n    },\n    {\n        \"email\": \"natalie.campbell@example.com\",\n        \"firstName\": \"Natalie\",\n        \"lastName\": \"Campbell\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"03-3880-4517\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/44.jpg\",\n        \"username\": \"natalie.campbell\"\n    },\n    {\n        \"email\": \"denis.caron@example.com\",\n        \"firstName\": \"Denis\",\n        \"lastName\": \"Caron\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"077 845 10 70\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/18.jpg\",\n        \"username\": \"denis.caron\"\n    },\n    {\n        \"email\": \"keith.phillips@example.com\",\n        \"firstName\": \"Keith\",\n        \"lastName\": \"Phillips\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"051-352-3979\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/97.jpg\",\n        \"username\": \"keith.phillips\"\n    },\n    {\n        \"email\": \"asdf@sas.asd\",\n        \"firstName\": \"asd\",\n        \"id\": \"0\",\n        \"lastName\": \"sdfs\",\n        \"password\": \"123123\",\n        \"phoneNumber\": \"56756785678\",\n        \"photoURL\": \"ads\",\n        \"username\": \"julinho 666\"\n    },\n    {\n        \"email\": \"zoe.phillips@example.com\",\n        \"firstName\": \"Zoe\",\n        \"lastName\": \"Phillips\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"011-915-8701\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/90.jpg\",\n        \"username\": \"zoe.phillips\"\n    },\n    {\n        \"email\": \"sr.khrymy@example.com\",\n        \"firstName\": \"سارا\",\n        \"lastName\": \"کریمی\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"061-28056341\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/42.jpg\",\n        \"username\": \"sr.khrymy\"\n    },\n    {\n        \"email\": \"awyn.khrymy@example.com\",\n        \"firstName\": \"آوینا\",\n        \"lastName\": \"کریمی\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"058-69312629\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/22.jpg\",\n        \"username\": \"awyn.khrymy\"\n    },\n    {\n        \"email\": \"rufino.moreira@example.com\",\n        \"firstName\": \"Rufino\",\n        \"lastName\": \"Moreira\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(61) 7121-8516\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/men/84.jpg\",\n        \"username\": \"rufino.moreira\"\n    },\n    {\n        \"email\": \"carla.turner@example.com\",\n        \"firstName\": \"Carla\",\n        \"lastName\": \"Turner\",\n        \"password\": \"defaultPassword\",\n        \"phoneNumber\": \"(590) 384-4605\",\n        \"photoURL\": \"https://randomuser.me/api/portraits/women/48.jpg\",\n        \"username\": \"carla.turner\"\n    },\n    {\n        \"email\": \"asdxasd@qeda.wed\",\n        \"firstName\": \"qwefdsqwed\",\n        \"id\": \"0\",\n        \"lastName\": \"qwef\",\n        \"password\": \"111111\",\n        \"phoneNumber\": \"12342134234\",\n        \"photoURL\": \"wefqwef\",\n        \"username\": \"cani243an123\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Get User Role",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/role",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"role"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get User Role",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/role",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"user",
+												"role"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "22"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 11:20:32 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"role\": \"scrumMaster\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Edit User Data",
+					"item": [
+						{
+							"name": "EditOwnUser data",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deleted\": false,\r\n    \"phoneNumber\": 2334234423\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/edituserdata",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"edituserdata"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "EditOwnUser data",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"deleted\": true,\r\n    \"phoneNumber\": 2334234423\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/edituserdata",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"user",
+												"edituserdata"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "30"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 11:45:34 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "User data updated successfully"
+								}
+							]
+						},
+						{
+							"name": "EditOTHERUser data",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "userToChangeUsername",
+										"value": "BrunoAleixo",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"asdsffgdf\",\r\n    \"lastName\": \"asdf\",\r\n    \"phoneNumber\": \"8888888888\",\r\n    \"photoURL\": \"asdf\",\r\n    \"deleted\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/editotheruser",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"editotheruser"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "EditUser data",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "username",
+												"value": "canicoman123",
+												"type": "text"
+											},
+											{
+												"key": "password",
+												"value": "123123",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n        \"email\": \"asdf@gmdail.com\",\r\n        \"firstName\": \"asdsffgdf\",\r\n        \"lastName\": \"asdf\",\r\n        \"phoneNumber\": \"8888888888\",\r\n        \"photoURL\": \"asdf\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/Project3-Backend/rest/user/edituserdata",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Project3-Backend",
+												"rest",
+												"user",
+												"edituserdata"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "30"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 15 Feb 2024 15:41:34 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "User data updated successfully"
+								}
+							]
+						},
+						{
+							"name": "Change password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "username",
+										"value": "canicoman123",
+										"type": "text"
+									},
+									{
+										"key": "password",
+										"value": "123123123",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n    \"password\": \"123123123\",\r\n    \"newPassword\": \"1111111111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/tiago-daniel-proj2/rest/user/edituserpassword",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-daniel-proj2",
+										"rest",
+										"user",
+										"edituserpassword"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Change password",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": " {\r\n    \"newPassword\": \"8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918\",\r\n    \"password\": \"1111111111\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/edituserpassword",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"user",
+												"edituserpassword"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "34"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 28 Feb 2024 22:26:56 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "User password updated successfully"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Delete Users",
+					"item": [
+						{
+							"name": "Permanently User delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "userToDeleteUsername",
+										"value": "BrunoAleixo",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/permanetelydelete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"permanetelydelete"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Permanently User delete",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "userToDeleteUsername",
+												"value": "BrunoAleixo",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/permanetelydelete",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"user",
+												"permanetelydelete"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "30"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 28 Feb 2024 22:34:29 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "This user permanently deleted "
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"item": [
+						{
+							"name": "Login Admin/ProjectOwner Copy",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/logout",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"logout"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Login Admin/ProjectOwner Copy",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/logout",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"user",
+												"logout"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "28"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 14:50:14 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "User logged out successfully"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "NegativeTests",
+			"item": [
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Login request - Failed Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"falsepassword\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Login request - Failed Login",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"falsepassword\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"user",
+												"login"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "12"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 10:33:29 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "Login Failed"
+								}
+							]
+						},
+						{
+							"name": "Login request - Missing Fields",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"password\": \"admin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Login request - Failed Login Copy",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"admin\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"user",
+												"login"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "12"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 10:35:45 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "Login Failed"
+								},
+								{
+									"name": "Login request - Failed Login Copy",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"password\": \"admin\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"user",
+												"login"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "12"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 10:36:08 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "Login Failed"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Registration",
+					"item": [
+						{
+							"name": "New Registration - Invalid Data",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 422\", function () {",
+											"    pm.response.to.have.status(422);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n    \"email\": \"asfgdf@gmdail.com\",\r\n    \"firstName\": \"asdf\",\r\n    \"lastName\": \"asdf\",\r\n    \"phoneNumber\": \"1122332233\",\r\n    \"photoURL\": \"asdf\",\r\n    \"username\": \"canicfghj23\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"add"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Registration - Invalid Data",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": " {\r\n    \"email\": \"asfgdf@gmdail.com\",\r\n    \"firstName\": \"asdf\",\r\n    \"lastName\": \"asdf\",\r\n    \"phoneNumber\": \"1122332233\",\r\n    \"photoURL\": \"asdf\",\r\n    \"username\": \"canicfghj23\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/add",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"user",
+												"add"
+											]
+										}
+									},
+									"status": "Unprocessable Entity",
+									"code": 422,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "12"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 10:37:17 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "Invalid Data"
+								}
+							]
+						},
+						{
+							"name": "New Registration - Username or Email already Exists",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 409\", function () {",
+											"    pm.response.to.have.status(409);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n    \"email\": \"asfgdf@gmdail.com\",\r\n    \"firstName\": \"asdf\",\r\n    \"lastName\": \"asdf\",\r\n    \"password\": \"sdfaferaf\",\r\n    \"phoneNumber\": \"1122332233\",\r\n    \"photoURL\": \"asdf\",\r\n    \"username\": \"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"add"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Registration - Username or Email already Exists",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": " {\r\n    \"email\": \"asfgdf@gmdail.com\",\r\n    \"firstName\": \"asdf\",\r\n    \"lastName\": \"asdf\",\r\n    \"password\": \"sdfaferaf\",\r\n    \"phoneNumber\": \"1122332233\",\r\n    \"photoURL\": \"asdf\",\r\n    \"username\": \"admin\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/add",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"user",
+												"add"
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "32"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 10:38:17 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "Username or Email already Exists"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get Information",
+					"item": [
+						{
+							"name": "Get All Users - No Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "username",
+										"value": "admin",
+										"type": "text"
+									},
+									{
+										"key": "password",
+										"value": "admin",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-daniel-proj2/rest/user/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-daniel-proj2",
+										"rest",
+										"user",
+										"all"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get All Users - No Login",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "password",
+												"value": "admin",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/all",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"user",
+												"all"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "12"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 10:41:08 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "Login Failed"
+								}
+							]
+						},
+						{
+							"name": "Get All Users - Acess Denied",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 403\", function () {",
+											"    pm.response.to.have.status(403);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "4e8suEYi5prsYopjuGAQe2TZlTVFEzgJ",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"all"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get All Users - Acess Denied",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "4e8suEYi5prsYopjuGAQe2TZlTVFEzgJ",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/all",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"user",
+												"all"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "13"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 11:10:51 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "Access denied"
+								}
+							]
+						},
+						{
+							"name": "Get user info - User Not Logged In",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "username",
+										"value": "canicoman123",
+										"type": "text"
+									},
+									{
+										"key": "password",
+										"value": "111111",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-daniel-proj2/rest/user/userinfo",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-daniel-proj2",
+										"rest",
+										"user",
+										"userinfo"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get user info - User Not Logged In",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/userinfo",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"user",
+												"userinfo"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "13"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 11:13:20 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "Access denied"
+								}
+							]
+						},
+						{
+							"name": "Get user info by username - Acess Denied",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 403\", function () {",
+											"    pm.response.to.have.status(403);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/userinfo/BrunoAleixo",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"userinfo",
+										"BrunoAleixo"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get user info by username Copy",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/userinfo/BrunoAleixo",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"user",
+												"userinfo",
+												"BrunoAleixo"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "25"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 11:19:31 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "User permissions violated"
+								}
+							]
+						},
+						{
+							"name": "Get User Role - Acess Denied",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/role",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"role"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get User Role Copy",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/role",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"user",
+												"role"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "25"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 11:21:36 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "User permissions violated"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Edit User Data",
+					"item": [
+						{
+							"name": "EditOwnUser data - Username or email already exists",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deleted\": false,\r\n    \"phoneNumber\": 2334234423\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/edituserdata",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"edituserdata"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "EditOwnUser data Copy",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"deleted\": false,\r\n    \"phoneNumber\": 2334234453,\r\n    \"username\": \"BrunoAleixo\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/edituserdata",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"user",
+												"edituserdata"
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "32"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 11:52:48 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "Username or Email already Exists"
+								}
+							]
+						},
+						{
+							"name": "EditOwnUser data - Not Loged In",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deleted\": false,\r\n    \"phoneNumber\": 2334234423\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/edituserdata",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"edituserdata"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "EditOwnUser data - Username or email already exists Copy",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"deleted\": false,\r\n    \"phoneNumber\": 2334234423\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/edituserdata",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"user",
+												"edituserdata"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "12"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 11:55:26 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "Login Failed"
+								}
+							]
+						},
+						{
+							"name": "EditOTHERUser data - no permission",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "userToChangeUsername",
+										"value": "BrunoAleixo",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"asdsffgdf\",\r\n    \"lastName\": \"asdf\",\r\n    \"phoneNumber\": \"8888888888\",\r\n    \"photoURL\": \"asddgbvf\",\r\n    \"deleted\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/editotheruser",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"editotheruser"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "EditOTHERUser data Copy",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "userToChangeUsername",
+												"value": "BrunoAleixo",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{adminToken}}",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "token",
+												"value": "{{scrumMasterToken}}",
+												"type": "text"
+											},
+											{
+												"key": "token",
+												"value": "{{developerToken}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"firstName\": \"asdsffgdf\",\r\n    \"lastName\": \"asdf\",\r\n    \"phoneNumber\": \"8888888888\",\r\n    \"photoURL\": \"asddgbvf\",\r\n    \"deleted\": true\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/editotheruser",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tiago-bernardo-proj3",
+												"rest",
+												"user",
+												"editotheruser"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "13"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 29 Feb 2024 15:46:40 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "Access denied"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Delete Users Copy",
+					"item": [
+						{
+							"name": "Permanently User delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "userToDeleteUsername",
+										"value": "BrunoAleixo",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{adminToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{scrumMasterToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{developerToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/user/permanetelydelete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tiago-bernardo-proj3",
+										"rest",
+										"user",
+										"permanetelydelete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

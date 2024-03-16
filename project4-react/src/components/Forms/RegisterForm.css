@@ -1,0 +1,40 @@
+#register_container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+
+#registrationForm {
+   width: 300px;
+}
+
+.banner {
+   background-color: rgb(114, 114, 114);
+   padding: 15px;
+   text-align: center;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+   padding-bottom: 10px;
+   display: flex;
+   align-items: center;
+   width: 90%;
+}
+
+.content {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+   width: 90%;
+   background-color: rgb(142, 142, 142);
+   padding-left: 5%;
+   padding-right: 5%;
+   padding-bottom: 25px;
+   padding-top: 25px;
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+}
+
+input {
+   padding: 4px;
+}

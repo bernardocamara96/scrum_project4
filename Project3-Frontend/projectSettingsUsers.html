@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- HTML File - contains the interactive content that is displayed -->
+<html lang="en">
+   <!------------------ Head ------------------------------------>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style.css" />
+      <script src="./js/projectSettingsUsers.js" type="module"></script>
+      <script src="./js/username.js" type="module"></script>
+      <script src="./js/theme.js" type="module"></script>
+      <script src="./js/language.js" type="module"></script>
+      <title>Project Settings - AntNest</title>
+      <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+   </head>
+
+   <body>
+      <!------------------ Header ------------------------------------>
+      <header>
+         <a href="homepage.html"><img id="logo" src="images/logo.png" alt="IMG" /></a>
+
+         <!------------------ Navigation Menu ------------------------------------>
+         <div class="topnav">
+            <a id="nav-home" href="homepage.html">Homepage</a>
+            <a id="nav-retro" href="retrospective.html">Retrospective</a>
+            <a id="nav-sett" href="settings.html">Settings</a>
+            <a id="nav-exit">Exit</a>
+         </div>
+         <!------------------ Username ------------------------------------>
+         <div id="right-aligned">
+            <a href="editProfile.html"
+               ><h4><span id="usernameDisplay">Username</span></h4></a
+            >
+         </div>
+         <!------------------ Photo ------------------------------------>
+         <a id="userPhotolink" href="editProfile.html"
+            ><div class="user-photo-div"><img id="userPhoto" src="images/user.png" alt="" /></div
+         ></a>
+         <!------------------ Language Flags ------------------------------------>
+         <div class="top-right-flags" id="langFlag">
+            <ul>
+               <li><a id="langIndexPT">PT</a></li>
+               <li><a id="langIndexEN">EN</a></li>
+            </ul>
+         </div>
+      </header>
+
+      <main id="main-settings">
+         <!-------------------------- Project Users --------------------------------------->
+         <aside class="col-leftMenu">
+            <h4 class="no_function menu-item" id="create-project">Create Project</h4>
+            <h4 class="no_function menu-item" id="select-project">Select Project</h4>
+            <h4 class="no_function menu-item" id="manage-backlog">Backlog Manager</h4>
+            <h4 class="no_function menu-item" id="select-sprint">Sprint Selector</h4>
+            <a href="projectSettingsUsers.html" class="menu-item set-pro" id="difSettings-users"><h4>Users</h4></a
+            ><a href="projectSettingsTasksCategory.html" class="menu-item set-pro" id="difSettings-tasks"
+               ><h4>Tasks</h4></a
+            >
+            <a href="projectSettingsCategories.html" class="menu-item set-pro" id="difSettings-categories"
+               ><h4>Categories</h4></a
+            >
+         </aside>
+
+         <!------------------ UserList ------------------------------------>
+         <div class="mainBoard-settings" id="mainBoard-settings">
+            <div class="user-list">
+               <br /><a id="user-list">User List</a><br />
+               <div class="box-container" id="box-users">
+                  <div class="col-user-list" id="col-users">
+                     <div class="search-container">
+                        <input type="text" id="userSearch" placeholder="🔍 Search">
+                     </div>
+                     <div class="scrolable-ul" id="User_COLUMN">
+                        <ul class="ul-users" ></ul>
+                     </div>
+                  </div>
+                  <div class="centralform" id="centralform">
+                     <form id="editProfileForm">
+      
+                        <div id="individual-user-info" style="text-align: center; display: none;">
+
+                           <div class="content" id="content">
+                              <div id="userImageContainer" style="text-align: center;">
+                                 <img id="userImage" style="width: 100px; height: 100px; border-radius: 50%;">
+                              </div>
+                              <label id="username-label" for="username-field">Username</label>
+                              <input type="text" name="username" id="username-field" maxlength="12" disabled />
+                              <label id="phone-label" for="phone-field">Phone</label>
+                              <input
+                                 type="text"
+                                 name="phone"
+                                 id="phone-field"
+                                 maxlength="35"
+                                 placeholder="Enter your phone"
+                              />
+                              <label id="email-label" for="email-field">Email</label>
+                              <input
+                                 type="text"
+                                 name="email"
+                                 id="email-field"
+                                 maxlength="35"
+                                 placeholder="Enter your email"
+                              />
+                              <label id="first-name-label" for="firstname-field">First Name</label>
+                              <input
+                                 type="text"
+                                 name="first-name"
+                                 id="firstname-field"
+                                 maxlength="35"
+                                 placeholder="Enter your First Name"
+                              />
+                              <label id="last-name-label" for="lastname-field">Last Name</label>
+                              <input
+                                 type="text"
+                                 name="last-name"
+                                 id="lastname-field"
+                                 maxlength="35"
+                                 placeholder="Enter your Last Name"
+                              />
+                              <label id="photo-label" for="photo-field">Photography</label>
+                              <input
+                                 type="text"
+                                 name="photo"
+                                 id="photo-field"
+                                 maxlength="500"
+                                 placeholder="Enter your Photo URL"
+                              />
+
+                              <label id="role-label" for="role-field">Role</label>
+                              <select name="role" id="role-field"></select>
+                              <label id="inactivate-label" for="inactivate-field">State</label>
+                              <select name="inactivate" id="inactivate-field">
+                                 <option value="false">Active</option>
+                                 <option value="true">Inactive</option>
+                              </select>
+                              <div id="edit-submitDiv">
+                                 <input type="submit" id="edit-submit" value="Submit" />
+                              </div>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+                  <div class="other-options-user">
+                     <div class="other-functions-byUser">
+                        <button id="delete-permanently">Permanently delete</button>
+                        <button id="delete-task-by-user">Delete Tasks</button>
+                        <button id="add-user"><a href="registration.html">Add User</a></button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+      <!------------------ Footer ------------------------------------>
+      <footer>
+         <p id="footer"><span>Tiago Caniceiro & Bernardo Câmara @ DEI.UC.PT</span></p>
+      </footer>
+      <!------------------ Footer /end ------------------------------------>
+   </body>
+</html>

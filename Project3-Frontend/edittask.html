@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!-- HTML File - contains the interactive content that is displayed -->
+<html lang="en">
+   <!--------------------------  Head ----------------------------------->
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style.css" />
+      <script src="./js/edittask.js" type="module"></script>
+      <script src="./js/username.js" type="module"></script>
+      <script src="./js/theme.js" type="module"></script>
+      <script src="./js/language.js" type="module"></script>
+      <title>Homepage - AntNest</title>
+      <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+   </head>
+   <!--------------------------  Body ----------------------------------->
+   <body>
+      <!------------------ Header ------------------------------------>
+      <header>
+         <a href="homepage.html"><img id="logo" src="images/logo.png" alt="IMG" /></a>
+
+         <!------------------ Navigation Menu ------------------------------------>
+         <div class="topnav">
+            <a id="nav-home" href="homepage.html">Homepage</a>
+            <a id="nav-retro" href="retrospective.html">Retrospective</a>
+            <a id="nav-sett" href="settings.html">Settings</a>
+            <a id="nav-exit">Exit</a>
+         </div>
+         <!------------------ Username ------------------------------------>
+         <div id="right-aligned">
+            <a href="editProfile.html"
+               ><h4><span id="usernameDisplay">Username</span></h4></a
+            >
+         </div>
+         <!------------------ Photo ------------------------------------>
+         <a id="userPhotolink" href="editProfile.html"
+            ><div class="user-photo-div"><img id="userPhoto" src="images/user.png" alt="" /></div
+         ></a>
+         <!------------------ Language Flags ------------------------------------>
+         <div class="top-right-flags" id="langFlag">
+            <ul>
+               <li><a id="langIndexPT">PT</a></li>
+               <li><a id="langIndexEN">EN</a></li>
+            </ul>
+         </div>
+      </header>
+      <main class="task-viewer-editer-adder">
+         <div class="mainBoard">
+            <!------------------ Task Contents ------------------------------------>
+            <form id="taskForm-viewer-edition">
+               <!-- Loaded page after form fetch okay -->
+               <div class="row-task-viewer">
+                  <h3 id="task-viewer">Task Viewer</h3>
+                  <button id="edit-btn" disabled>
+                     <img id="edit-icon" src="images/edit.png" alt="Edit" hidden="true" />
+                  </button>
+               </div>
+
+               <div class="row-title">
+                  <label id="label-title" for="title">Title </label>
+                  <input class="editable-onClick" type="text" name="title" id="title" disabled maxlength="20" />
+                  <label id="label-category" for="category-type">Category</label>
+                  <span
+                     ><select class="editable-onClick" name="category-type" id="category-type" disabled></select
+                  ></span>
+                  <span>Author: </span><span id="author-username"></span>
+               </div>
+
+               <div class="row-description">
+                  <label id="label-description" for="description">Description</label>
+                  <textarea
+                     class="editable-onClick"
+                     name="description"
+                     id="description"
+                     disabled
+                     maxlength="400"
+                  ></textarea>
+               </div>
+
+               <div class="row-date-start">
+                  <label id="label-date-start" for="date-start">Start Date</label>
+                  <input class="editable-onClick" type="date" name="date-start" id="date-start" disabled />
+               </div>
+               <div class="row-date-end">
+                  <label id="label-date-end" for="date-end">End Date</label>
+                  <input class="editable-onClick" type="date" name="date-end" id="date-end" disabled />
+               </div>
+               <div class="row-priority">
+                  <label for="priority">Priority</label>
+                  <select class="editable-onClick" name="priority" id="priority" disabled>
+                     <option value="1">Low</option>
+                     <option value="2" selected>Medium</option>
+                     <option value="3">High</option>
+                  </select>
+               </div>
+               <div class="row-submit">
+                  <input id="save-task" type="button" value="Save Task" hidden />
+               </div>
+               <div class="row-back">
+                  <button id="cancel-edit" class="row-back-buttons" type="button">Back</button>
+                  <button id="delete-task" class="row-back-buttons" type="button" disabled hidden>Delete</button>
+               </div>
+            </form>
+         </div>
+      </main>
+
+      <!------------------ Footer ------------------------------------>
+      <footer>
+         <p id="footer"><span>Tiago Caniceiro & Bernardo Câmara @ DEI.UC.PT</span></p>
+      </footer>
+   </body>
+</html>

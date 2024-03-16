@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "2bd5fc7b-be81-4d14-a7f9-fa3e0fbde526",
+		"name": "Project3-Categories",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32788170",
+		"_collection_link": "https://lively-spaceship-992404.postman.co/workspace/Workspace---AoR---2024~e53d9bf5-abfb-4e61-a1db-883e0d22b76b/collection/32787927-2bd5fc7b-be81-4d14-a7f9-fa3e0fbde526?action=share&source=collection_link&creator=32788170"
+	},
+	"item": [
+		{
+			"name": "addCategory",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "ewlKP6NFj5fphs0F1pJS6hUlfKJhQICg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/category/add/No_Category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiago-bernardo-proj3",
+						"rest",
+						"category",
+						"add",
+						"No_Category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Categories",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "deleted",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/tiago-bernardo-proj3/rest/category/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiago-bernardo-proj3",
+						"rest",
+						"category",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit Task By Type",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Category by Type",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
